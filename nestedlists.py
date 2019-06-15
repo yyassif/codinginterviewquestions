@@ -1,7 +1,8 @@
 # author: Myungho Daniel Sim
 # Nested list question 
 # source hackerrank.com
-# Given the names and grades for each student in a Physics class of  students, store them in a nested list and print the name(s) of any student(s) having the second lowest grade.
+# Given the names and grades for each student in a Physics class of  students,
+# store them in a nested list and print the name(s) of any student(s) having the second lowest grade.
 list = []
 for _ in range(int(raw_input())):
     name = raw_input()
