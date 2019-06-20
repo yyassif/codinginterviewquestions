@@ -2,7 +2,7 @@
 #big sum problem from hackerrank
 #hard implementation of big sum. Not necessary in python but implemented for practice
 #!/bin/python3
-# idea taken from geeksforgeeks article #https://www.geeksforgeeks.org/sum-two-large-numbers/
+# ideas taken from geeksforgeeks article #https://www.geeksforgeeks.org/sum-two-large-numbers/
 import math
 import os
 import random
