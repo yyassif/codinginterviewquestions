@@ -1,3 +1,5 @@
+#Myungho Sim
+# leetcode merge two lists problem
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, x):
@@ -17,30 +19,18 @@ class Solution:
             head = l1
         else:
             head = l2
-        curr=None
-        next = None
+        curr= ListNode(None)
         while l1 is not None and l2 is not None:
-            if l1.vla < l2.val:
+            if l1.val < l2.val:
+                curr.next = l1
                 curr = l1
-                if l1.next.val <l2.val:
-                    next = l1.next
-                else:
-                    next = l2
+                l1 = l1.next
             else:
-                curr =l2
-                if l1.next.val <l2.val:
-                    next = l1.next
-                else:
-                    next = l2
-            
-            curr.next = next
-            curr = next
+                curr.next =l2
+                curr = l2
+                l2 = l2.next
         if l1 is None and l2 is not None:
-            l2 = l2.next
+            curr.next = l2
         elif l1 is not None and l2 is None:
-            l1=l1.next
+            curr.next = l1
         return head
-            
-                
-            
-            
