@@ -1,0 +1,13 @@
+#Myungho Sim
+#palindrome number problem on leetcode
+#better than 97% on leetcode
+class Solution:
+    def isPalindrome(self, x: int) -> bool:
+        if x<0:
+            return False
+        n = str(x)
+        size = len(n)
+        for i in range(int(size/2)):
+            if n[i] != n[size-1-i]:
+                return False
+        return True
