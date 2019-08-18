@@ -1,5 +1,3 @@
-#Myungho Sim
-#Encode and Decode TinyURL @leetcode
 class Codec:
     map = {}
     def encode(self, longUrl):
@@ -8,7 +6,12 @@ class Codec:
         :type longUrl: str
         :rtype: str
         """
-        self.map[longUrl] = "http://tinyurl.com/"+self.generate_random_string_length6()
+        #check if the longUrl already exists
+        try:
+            self.map[longUrl]
+            return self.map[longUrl]
+        except:
+            self.map[longUrl] = "http://tinyurl.com/"+self.generate_random_string_length6()
         return self.map[longUrl]
 
     def decode(self, shortUrl):
@@ -22,6 +25,7 @@ class Codec:
                 return k
         return None
     def generate_random_string_length6(self):
+        #generate character array A to Z , a to z, 0 to 9
         char_arr = []
         # char_arr =list("abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789")
                  
@@ -32,9 +36,18 @@ class Codec:
             char_arr.extend(chr(i))
         for i in range(ord('a'), ord('z') + 1): #a to z 26 of them
             char_arr.extend(chr(i))
-        for i in range(6):
-            index = random.randint(0,61) #randomly generate 1 in 62 probability
-            string+= char_arr[index]
+        #randomly generate string of length 6
+        while(True):
+            for i in range(6):
+                index = random.randint(0,61) #randomly generate 1 in 62 probability
+                string+= char_arr[index]
+            isDuplicate=False
+            for k,v in self.map.items():
+                if v==string:
+                    isDuplicate=True
+                    break
+            if isDuplicate==False:
+                break
         return string
 
 # Your Codec object will be instantiated and called as such:
