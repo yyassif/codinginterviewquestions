@@ -1,3 +1,5 @@
+#Myungho Sim
+#encode and decode tinyUrl @ leetcode
 class Codec:
     map = {}
     def encode(self, longUrl):
