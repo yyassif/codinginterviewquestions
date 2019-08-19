@@ -1,0 +1,6 @@
+# how to remove non-alphabetical words 1
+''.join([i for i in s if i.isalpha()])
+
+# how to remove non-alphabetical words 2
+import re
+re.sub("[^a-zA-Z]+", "", "ABC12abc345def")
