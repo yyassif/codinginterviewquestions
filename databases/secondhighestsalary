@@ -1,0 +1,6 @@
+#Myungho Sim
+#secondhighestsalary problem on leetcode. discussion solution consulted. mysql code.
+select max(A.salary) as SecondHighestSalary
+from employee A
+join employee B
+on A.salary < B.salary and A.Id <> B.Id
