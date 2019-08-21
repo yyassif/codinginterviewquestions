@@ -4,3 +4,6 @@
 # how to remove non-alphabetical words 2
 import re
 re.sub("[^a-zA-Z]+", "", "ABC12abc345def")
+
+#Top problems
+N-ary tree post order, iterative and recursive
