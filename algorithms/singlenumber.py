@@ -18,3 +18,12 @@ class Solution:
                 return k
         return None
         
+#solution two using XOR
+#idea taken from leetcode discussion
+class Solution:
+    def singleNumber(self, nums: List[int]) -> int:
+        n=0
+        for d in nums:
+            n = n^d
+        return n
+        
