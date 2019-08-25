@@ -15,5 +15,10 @@ sorted(map)
 #sort array in reverse
 print(sorted(arr, reverse=True))
 
-#Top problems
-N-ary tree post order, iterative and recursive
+#initalize array with fixed size and type
+a=[]
+a[2] = 2 #error
+a = [int] *10
+a[2] = 2 #no error
+
+
