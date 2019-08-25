@@ -1,0 +1,3 @@
+Medium questions to review on leetcode
+* rotate image
+* permutations
