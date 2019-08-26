@@ -1,4 +1,0 @@
-#Top problems @leetcode
-* rotate image
-* permutations
-* N-ary tree post order, iterative and recursive
