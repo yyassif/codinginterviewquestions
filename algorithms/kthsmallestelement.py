@@ -1,5 +1,5 @@
 #Myungho Sim
-#kth smallest element from leetcode. using array and preorder. 
+#kth smallest element from leetcode. using array and inorder. 
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, x):
@@ -12,9 +12,9 @@ class Solution:
         arr = []
         def preorder(node):
             if node:
-                arr.append(node.val)
                 preorder(node.left)
+                # if node.val not in arr:
+                arr.append(node.val)
                 preorder(node.right)
         preorder(root)
-        arr.sort()
         return arr[k-1]
