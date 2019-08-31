@@ -23,3 +23,6 @@ a[2] = 2 #no error
 
 #bit manipulation
 https://wiki.python.org/moin/BitManipulation
+
+#return index of character in a string
+string.index(char)
