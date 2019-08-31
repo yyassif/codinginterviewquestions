@@ -10,11 +10,11 @@
 class Solution:
     def kthSmallest(self, root: TreeNode, k: int) -> int:
         arr = []
-        def preorder(node):
+        def inorder(node):
             if node:
-                preorder(node.left)
+                inorder(node.left)
                 # if node.val not in arr:
                 arr.append(node.val)
-                preorder(node.right)
-        preorder(root)
+                inorder(node.right)
+        inorder(root)
         return arr[k-1]
