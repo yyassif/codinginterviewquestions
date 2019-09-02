@@ -32,3 +32,10 @@ ord(char)
 
 #ascii to char
 chr( num)
+
+#create set
+a = set()
+
+#convert set to list
+a = set()
+b = list(a)
