@@ -5,3 +5,4 @@
 * convert sorted list to binary search tree
 https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/discuss/361353/Python-recursive-and-iterative-solution
 *top k smallest items
+*sqrt(x)
