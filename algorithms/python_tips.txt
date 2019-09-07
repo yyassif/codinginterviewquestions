@@ -12,6 +12,19 @@ sorted(d.items(), key=lambda x: x[1], reverse=True)
 #sort map by key
 sorted(map)
 
+#sort map by value 1
+import operator
+x = {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}
+sorted_x = sorted(x.items(), key=operator.itemgetter(0))
+
+#sort map by value 2
+x = {1: 2, 3: 4, 4: 3, 2: 1, 0: 0}
+sorted_x = sorted(x.items(), key=lambda kv: kv[1])
+
+#sort map by value 3
+import collections
+sorted_dict = collections.OrderedDict(sorted_x)
+
 #sort array in reverse
 print(sorted(arr, reverse=True))
 
