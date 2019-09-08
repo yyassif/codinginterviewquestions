@@ -13,3 +13,6 @@ https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/discuss
 https://runestone.academy/runestone/books/published/pythonds/Trees/BinaryHeapImplementation.html
 * heap sort 
 https://www.geeksforgeeks.org/heap-sort/
+
+* heap sort application
+378. Kth Smallest Element in a Sorted Matrix
