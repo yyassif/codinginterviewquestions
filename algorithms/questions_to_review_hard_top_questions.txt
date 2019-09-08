@@ -16,3 +16,5 @@ https://www.geeksforgeeks.org/heap-sort/
 
 * heap sort application
 378. Kth Smallest Element in a Sorted Matrix
+solution
+https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/discuss/376099/Simply-Simple-Python-Solution-using-min-heap-O(nlogk)
