@@ -94,6 +94,6 @@ True
 >>> b = a.copy()
 >>> b
 [1, 5, 4, 2, 3]
->>> random.shuffle(b)
+>>> random.shuffle(b) #caution - shuffle shuffles array in place. it returns None
 >>> b
 [3, 1, 5, 2, 4]
