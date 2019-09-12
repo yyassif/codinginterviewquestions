@@ -84,3 +84,16 @@ True
 >>> import heapq
 >>> heapq.nlargest(2, count.keys(), key=count.get)
 [1, 2]
+
+#copy lists and randomly shuffle
+>>> a=[1,2,3,4,5]
+>>> import random
+>>> random.shuffle(a)
+>>> a
+[1, 5, 4, 2, 3]
+>>> b = a.copy()
+>>> b
+[1, 5, 4, 2, 3]
+>>> random.shuffle(b)
+>>> b
+[3, 1, 5, 2, 4]
