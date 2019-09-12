@@ -23,3 +23,5 @@ class Solution:
 # obj = Solution(nums)
 # param_1 = obj.reset()
 # param_2 = obj.shuffle()
+#also review a different sol from leetcode
+#https://leetcode.com/problems/shuffle-an-array/discuss/349369/Python%3A-why-not-inherit-from-list
