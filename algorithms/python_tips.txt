@@ -103,3 +103,19 @@ True
 [2, 1, 5]
 >>> random.sample(a,5)
 [1, 2, 4, 3, 5]
+
+[initialize hash map]
+d = {}
+ for i in xrange(4000000):
+     d[i] = None
+ # 722ms
+
+ d = dict(itertools.izip(xrange(4000000), itertools.repeat(None)))
+ # 634ms
+
+ dict.fromkeys(xrange(4000000))
+ # 558ms
+
+ s = set(xrange(4000000))
+ dict.fromkeys(s)
+ # Not including set construction 353ms
