@@ -38,6 +38,10 @@ a[2] = 2 #no error
 https://wiki.python.org/moin/BitManipulation
 
 #return index of character in a string
+
+[print without a new line]
+print("Good Morning!", end = '')
+
 string.index(char)
 
 #char to ascii 
