@@ -123,3 +123,15 @@ d = {}
  s = set(xrange(4000000))
  dict.fromkeys(s)
  # Not including set construction 353ms
+ 
+ #reshape(-1,1)
+ convert array to have single feature
+ e.g. arr = [[1,2,3,4],[5,6,7,8]].reshape(-1,1) ->
+array([[ 1],
+   [ 2],
+   [ 3],
+   [ 4],
+   [ 5],
+   [ 6],
+   [ 7],
+   [ 8])
