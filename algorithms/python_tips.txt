@@ -135,3 +135,6 @@ array([[ 1],
    [ 6],
    [ 7],
    [ 8])
+
+#pair two arrays into one list (x,y), (2,3)....
+year_sale = [[x, y] for x, y in zip(train_top15['YearBuilt'],train_top15['SalePrice'])]
