@@ -1,4 +1,13 @@
 #solution2 greedy approach makes the most sense @ https://leetcode.com/articles/maximum-subarray/
+import sys
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        max_sum = curr_max= nums[0]
+        for i in range(1, len(nums)):
+            curr_max = max(curr_max+nums[i], nums[i])
+            max_sum = max(max_sum, curr_max)
+        return max_sum
+    
 #max sub array
 #solution 1 dynamic programming approach
 import sys
