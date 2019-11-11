@@ -1,3 +1,17 @@
+#max sub array
+#solution 1 dynamic programming approach
+import sys
+class Solution:
+    def maxSubArray(self, nums: List[int]) -> int:
+        max_cum = nums[0]
+        for i in range(1,len(nums)):
+            if nums[i-1]>0:
+                nums[i]+=nums[i-1]
+            max_cum = max(nums[i], max_cum)
+        return max_cum
+                
+        
+#solution 2-naive solution. time out at leetcode
 import sys
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
