@@ -1,3 +1,4 @@
+#solution2 greedy approach makes the most sense @ https://leetcode.com/articles/maximum-subarray/
 #max sub array
 #solution 1 dynamic programming approach
 import sys
