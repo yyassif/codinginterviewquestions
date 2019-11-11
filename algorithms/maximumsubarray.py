@@ -2,10 +2,11 @@
 import sys
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
-        max_sum = curr_max= nums[0]
+        max_sum = curr_max= nums[0]   
         for i in range(1, len(nums)):
             curr_max = max(curr_max+nums[i], nums[i])
-            max_sum = max(max_sum, curr_max)
+            max_sum = max(max_sum, curr_max) # compare again with the first element
+            #in case with nums = [-2,-3]
         return max_sum
     
 #max sub array
