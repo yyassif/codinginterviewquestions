@@ -1,6 +1,6 @@
 #Myungho Sim
 # No 200 number of islands problem at leetcode
-# solution similar to leetcode's
+# DFS solution similar to leetcode's
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
         def dfs(grid,r,c):
