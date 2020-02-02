@@ -1,3 +1,6 @@
+#Myungho Sim
+#988 rotting oranges
+#better than 98% runtime, 100% storage
 class Solution:
     def orangesRotting(self, grid: List[List[int]]) -> int:
         que = collections.deque()
