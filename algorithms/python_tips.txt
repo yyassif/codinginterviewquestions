@@ -183,3 +183,8 @@ check if list evaluates to true
 list = [true, false]=> false
 list = [1,1]=> true
 all(list)
+
+#find unique values from a list
+https://www.geeksforgeeks.org/python-get-unique-values-list/
+set(list)
+numpy.unique(list)
