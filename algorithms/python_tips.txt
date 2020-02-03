@@ -158,3 +158,21 @@ dtype: int64
 0    4
 1    8
 dtype: int64
+
+#map using func and list
+result = map(lambda x: x + x, numbers) 
+print(list(result)) 
+output:
+{2, 4, 6, 8}
+
+https://www.geeksforgeeks.org/python-map-function/
+
+#str.find(pattern)
+return index of the pattern
+https://www.programiz.com/python-programming/methods/string/find
+
+* combine map and find
+pattern = "abba"
+str = "dog cat cat dog"
+https://leetcode.com/problems/word-pattern/discuss/471173/Pythonic-sol.-based-on-native-map-zip-and-all.-run-time-85%2B
+struct_pat = map( pattern.find ,pattern)
