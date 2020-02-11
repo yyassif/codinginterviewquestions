@@ -1,5 +1,5 @@
-# 1->2->3->None
-# 1<-2<-3<-None
+# before: 1->2->3->None
+# after : 1<-2<-3<-None
 class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
         if head is None:
