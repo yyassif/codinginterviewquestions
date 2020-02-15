@@ -188,3 +188,6 @@ all(list)
 https://www.geeksforgeeks.org/python-get-unique-values-list/
 set(list)
 numpy.unique(list)
+
+#quotient, remainder = divmod(x,y)
+get quotient and remainder
