@@ -33,11 +33,14 @@ class Solution:
             cnt = len(arr)- len(num.lstrip('1')) #count length after leading 1's
             if cnt==0:
                 i+=1
-            elif 2<=cnt<=4:
-                while i+1<n and arr[i+1].startswith('10') and cnt>1:
+            elif 2<=cnt<=4: #make sure N byte cnt is between 2 and 4
+                #check next number if begins with 10 and remaining cnt is 1 or greater
+                while i+1<n and arr[i+1].startswith('10') and cnt>1: 
                     i+=1
                     cnt-=1
-                if cnt!=1:
+                #check if leading number encodes Nbytes but there are less than N continuous numbers. 
+                #e.g. 11100000 followed by 00000001
+                if cnt!=1: 
                     return False
                 i+=1
             else:
