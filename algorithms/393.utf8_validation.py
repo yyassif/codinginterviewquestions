@@ -15,3 +15,33 @@ It is a valid utf-8 encoding for a 2-bytes character followed by a 1-byte charac
 2 bytes char: 11000101
 followed by 1bytes char :  10000010
 n-1 byte=@1 byte char = 10000010 describes 1 byte num. it is followed by 00000001
+
+#SOLUTION from https://leetcode.com/problems/utf-8-validation/discuss/87530/Python-Easy-to-understand-Solution
+class Solution:
+    def validUtf8(self, data: List[int]) -> bool:
+        if not data:
+            return False
+        i=0
+        n = len(data)
+        arr = [bin(x)[2:].zfill(8) for x in data]
+        #valid cases of leading 1's for N bytes
+        # 11 000000    
+        # 111 00000
+        # 1111 0000
+        while i<n:
+            num = arr[i]
+            cnt = len(arr)- len(num.lstrip('1')) #count length after leading 1's
+            if cnt==0:
+                i+=1
+            elif 2<=cnt<=4:
+                while i+1<n and arr[i+1].startswith('10') and cnt>1:
+                    i+=1
+                    cnt-=1
+                if cnt!=1:
+                    return False
+                i+=1
+            else:
+                return False
+        return True
+        
+                
