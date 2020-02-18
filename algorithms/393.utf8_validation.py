@@ -40,7 +40,7 @@ class Solution:
                     cnt-=1
                 #check if leading number encodes Nbytes but there are less than N continuous numbers. 
                 #e.g. 11100000 followed by 00000001
-                if cnt!=1: 
+                if cnt!=1: #the first number doesn't start w/ '10'. cnt has to be 1 after while loop 
                     return False
                 i+=1
             else:
