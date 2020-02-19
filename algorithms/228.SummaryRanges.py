@@ -6,7 +6,7 @@
 # my own solution
 class Solution:
     def summaryRanges(self, nums: List[int]) -> List[str]:
-        nums.append(-1)
+        nums.append(-1)  # last one does not print. add dummy number
         n = len(nums)
         if n==0:
             return None
@@ -18,7 +18,7 @@ class Solution:
             else:
                 temp=str(a)+"->"+str(b)
                 ret.append(temp)            
-        while i+1<n:
+        while i+1<n:    #*** i only goes up to index=n-2. so insert dummy number to get to the last element
             if nums[i]+1==nums[i+1]:
                 end=i
                 while end+1<n and nums[end]+1==nums[end+1]:
