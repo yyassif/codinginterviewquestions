@@ -1,5 +1,7 @@
 #my own sol for design hit counter problem - run time better than 92%, 100% memory
 #idea: improve by storing (timestamp, cnt) pair to array and binary search timestamp-300 and timestamp itself
+# low=t-299 and high=timestamp, binary search idx low and high. count numbers between low and high
+# refer to https://leetcode.com/problems/design-hit-counter/discuss/500382/python-binary-search-solution for 2nd sol
 class HitCounter:
     def __init__(self):
         """
