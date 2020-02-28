@@ -7,7 +7,7 @@ class Solution:
         frac=""
         if numerator<0 ^ denominator<0:
             frac+="-"
-        dividend = abs(numerator)
+        dividend = abs(numerator)  # it can be negative numbers
         divisor = abs(denominator)
         frac+=str(dividend//divisor)
         remainder= numerator%denominator
