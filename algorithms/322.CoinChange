@@ -1,5 +1,5 @@
 # 322. Coin Change
-# top down sol adapted from: good sol https://leetcode.com/problems/coin-change/discuss/509722/python.-easy-DP-solution
+# dp sol adapted from: good sol https://leetcode.com/problems/coin-change/discuss/509722/python.-easy-DP-solution
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
         arr = [amount+1 for i in range(amount+1)]
