@@ -21,5 +21,5 @@ class Solution:
     def reverseBits(self, n):
         s=""
         for i in range(32):
-            s=s+str(n>>i & 1)
+            s=s+str(n>>i & 1) #read from right and add it to a string var. naturally it will be reversed
         return int(s,2)
