@@ -22,4 +22,4 @@ class Solution:
         s=""
         for i in range(32):
             s=s+str(n>>i & 1) #read from right and add it to a string var. naturally it will be reversed
-        return int(s,2)
+        return int(s,2) #reads string value of s as binary number and returns base 10 number. 
