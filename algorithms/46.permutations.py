@@ -18,4 +18,20 @@ class Solution:
         return ret
     
                 
+#leetcode's solution   
+#46. Permutations
+class Solution:
+    def permute(self, nums: List[int]) -> List[List[int]]:
+        
+        def back(first=0):
+            if first == n:
+                ret.append(nums[:]) #copy of the whole array. Important! without[:] does not work
+            for i in range(first, n):
+                nums[first], nums[i] = nums[i],nums[first]
+                back(first+1)
+                nums[first], nums[i] = nums[i],nums[first]
+        ret = []
+        n = len(nums)
+        back()
+        return ret
             
