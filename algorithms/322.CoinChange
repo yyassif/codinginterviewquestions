@@ -1,0 +1,15 @@
+# 322. Coin Change
+# adapted from: good sol https://leetcode.com/problems/coin-change/discuss/509722/python.-easy-DP-solution
+class Solution:
+    def coinChange(self, coins: List[int], amount: int) -> int:
+        arr = [amount+1 for i in range(amount+1)]
+        arr[0] = 0
+        for i in range(1, amount+1):
+            mini = arr[i]
+            for coin in coins:
+                if i-coin>=0:
+                    mini = min(mini, arr[i-coin]+1)
+            arr[i] = mini
+        if arr[-1]>amount:
+            return -1
+        return arr[amount]
