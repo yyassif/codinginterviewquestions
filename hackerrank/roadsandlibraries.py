@@ -44,3 +44,15 @@ def roadsAndLibraries(n, c_lib, c_road, cities):
             
         total = c_road * roads + c_lib * connectedComponents
     return total
+
+
+#Kruskal's mst solution
+gp = {i:i for i in range(1,n+1)}
+sets = { i:[i] for i in range(1,n+1)}
+for u,v in edges:
+    if gp[u]!=gp[v]:
+        temp = gp[v]
+        for i in sets[gp[v]]:
+            gp[i]=gp[u]
+            sets[gp[u]].append(i)
+        del sets[temp]
