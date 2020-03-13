@@ -1,4 +1,12 @@
-#shorter ver
+#using heapify
+class Solution:
+    def topKFrequent(self, words: List[str], k: int) -> List[str]:
+        counts = collections.Counter(words)
+        arr = [(-freq, w) for w, freq in counts.items()]
+        heapq.heapify(arr)
+        return [heapq.heappop(arr)[1] for _ in range(k)]
+
+#shorter ver using collections.Counter and sort
 class Solution:
     def topKFrequent(self, words: List[str], k: int) -> List[str]:
         counts = collections.Counter(words)
