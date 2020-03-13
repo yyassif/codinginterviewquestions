@@ -1,3 +1,11 @@
+#shorter ver
+class Solution:
+    def topKFrequent(self, words: List[str], k: int) -> List[str]:
+        counts = collections.Counter(words)
+        items = list(counts)
+        items.sort(key = lambda x:(counts[x]), reverse=True)
+        return items[:2]
+
 #k frequent element = print top k number of most frequent elements
 from operator import itemgetter
 class Solution(object):
