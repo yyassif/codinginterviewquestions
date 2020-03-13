@@ -9,10 +9,10 @@ class Solution:
 #shorter ver using collections.Counter and sort
 class Solution:
     def topKFrequent(self, words: List[str], k: int) -> List[str]:
-        counts = collections.Counter(words)
-        items = list(counts)
-        items.sort(key = lambda x:(counts[x]), reverse=True)
-        return items[:2]
+        count = collections.Counter(words)
+        items = list(count)
+        items.sort(key=lambda x:(-count[x],x)) #(-count[x],x) for sorting alphabetically
+        return items[:k]
 
 #k frequent element = print top k number of most frequent elements
 from operator import itemgetter
