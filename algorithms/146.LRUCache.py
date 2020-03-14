@@ -1,6 +1,9 @@
 #lru cache
 #tip on ordereddict https://www.journaldev.com/21807/python-ordereddict
-
+# ** OrderedDict popitem : removes the items in FIFO order.
+# It accepts a boolean argument **last**, if it’s set to True then items are returned in LIFO order.
+# We can move an item to the beginning or end of the OrderedDict using move_to_end function.
+# It accepts a boolean argument last, if it’s set to False then item is moved to the start of the ordered dict.
 from collections import OrderedDict
 class LRUCache(OrderedDict):
 
