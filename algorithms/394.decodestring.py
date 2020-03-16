@@ -2,28 +2,23 @@
 #sol adopted from https://leetcode.com/problems/decode-string/discuss/508115/Simple-python-with-stack-easy-to-understand
 class Solution:
     def decodeString(self, s: str) -> str:
-        size=len(s)
+        size= len(s)
         if size==0:
             return ""
-        stack=[]
-        cur=""
+        stack = []
+        
         for i in range(size):
-            cur = s[i]
-            if cur.isdigit() or cur.isalpha() or cur=="[":
+            cur=s[i]
+            if cur=="[" or cur.isdigit() or cur.isalpha():
                 stack.append(cur)
-            else:
-                #get pattern 
+            else: # ] encountered
                 pat=""
-                while stack and stack[-1]!='[':
-                    pat = stack.pop() +pat
-                stack.pop() #rid of ]
-                
-                #get k val
+                while stack and stack[-1].isalpha():
+                    pat = stack.pop()+pat
+                stack.pop() #rid of [
                 k_str=""
                 while stack and stack[-1].isdigit():
-                   k_str= stack.pop()+k_str
-                k = int(k_str)
-                word = pat*k
-                stack.append(word)
+                    k_str = stack.pop()+k_str
+                k=int(k_str)
+                stack.append(pat*k)
         return ''.join(stack)
-                    
