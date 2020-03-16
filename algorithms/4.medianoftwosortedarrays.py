@@ -37,3 +37,10 @@ class Solution:
             median = arr[med_idx]
         return median
         
+#shorter ans from https://leetcode.com/articles/median-of-two-sorted-arrays/
+from heapq import merge
+from statistics import median
+
+class Solution:
+    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        return median(list(merge(nums1, nums2)))
