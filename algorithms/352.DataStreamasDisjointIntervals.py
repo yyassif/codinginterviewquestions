@@ -1,3 +1,16 @@
+# examples
+# [[1,2], [4,5]] + 3 -> merge two intervals into [[1,5]]
+# [[1,2], [5,6]] + 3 -> update [1,2] to [1,3]
+# [[1,2], [5,6]] + 4 -> update [5,6] to [4,6]
+# [[1,2], [6,7]] + 4 -> add another interval [4,4]
+
+# cases 
+# i = 0
+# i = len(list)
+# i in middle but need to merge with i-1
+# i in middle but need to merge with original i
+# i in middle but need to merge with original i and i-1
+# i in middle but don't need to merge anything
 # best sol @ https://leetcode.com/problems/data-stream-as-disjoint-intervals/discuss/542911/Python-binary-search-and-insert-remove-merge-element
 class SummaryRanges(object):
 
