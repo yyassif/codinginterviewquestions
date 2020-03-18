@@ -54,10 +54,10 @@ class SummaryRanges(object):
                 self.int.append([val, val])
         elif self.int[i-1][1] == val - 1:
             self.int[i-1][1] = val
-            if self.int[i][0] == val + 1:
+            if self.int[i][0] == val + 1: #check next interval since new val has been added and merge
                 self.int[i-1][1] = self.int[i][1]
                 self.int.pop(i)
-        elif self.int[i][0] == val + 1:
+        elif self.int[i][0] == val + 1: #update ith interval
             self.int[i][0] = val
         else:
             self.int.insert(i, [val, val])
