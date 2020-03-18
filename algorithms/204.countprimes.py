@@ -1,3 +1,5 @@
+#solution based on Sieve of Eratosthenes
+#https://www.geeksforgeeks.org/sieve-of-eratosthenes/
 class Solution:
     def countPrimes(self, n: int) -> int:
         p=[True]*n
