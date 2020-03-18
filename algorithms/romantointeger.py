@@ -1,44 +1,14 @@
-#Myungho Sim
-#roman to integer problem at leetcode
+# 13. Roman to Integer
 class Solution:
     def romanToInt(self, s: str) -> int:
-        size = len(s)
-        v=0
-        for i in range(size):
-            d = s[i]
-            if d=="I":
-                if i==size-1 or (i<size-1 and s[i+1]=="I"):
-                    v+=1
-            elif d=="V":
-                if i==size-1 or (i<size-1 and s[i+1]=="I"):
-                    v+=5
-                    if(i>0 and s[i-1]=="I"):
-                        v-=1
-            elif d=="X":
-                if i==size-1 or (i<size-1 and (s[i+1]=="I" or s[i+1]=="V" or s[i+1]=="X")):
-                    v+=10
-                    if(i>0 and s[i-1]=="I"):
-                        v-=1
-            elif d=="L":
-                if i==size-1 or (i<size-1 and (s[i+1]=="I" or s[i+1]=="V" or s[i+1]=="X" or s[i+1]=="L")):
-                    v+=50
-                    if(i>0 and s[i-1]=="X"):
-                        v-=10
-            elif d=="C":
-                if i==size-1 or (i<size-1 and (s[i+1]=="I" or s[i+1]=="V" or s[i+1]=="X" or s[i+1]=="L" or s[i+1]=="C")):
-                    v+=100
-                    if(i>0 and s[i-1]=="X"):
-                        v-=10
-            elif d=="D":
-                if i==size-1 or (i<size-1 and (s[i+1]=="I" or s[i+1]=="V" or s[i+1]=="X" or s[i+1]=="L" or s[i+1]=="C" or s[i+1]=="D")): 
-                    v+=500
-                    if(i>0 and s[i-1]=="C"):
-                        v-=100
-            elif d=="M":
-                if i==size-1 or (i<size-1 and (s[i+1]=="I" or s[i+1]=="V" or s[i+1]=="X" or s[i+1]=="L" or s[i+1]=="C" or s[i+1]=="D" or s[i+1]=="M")): 
-                    v+=1000
-                    if(i>0 and s[i-1]=="C"):
-                        v-=100
-        return v
-                
-                
+        sym = {"I":1, "V":5, "X":10,"L":50,"C":100,"D":500,"M":1000, "S":10000}
+        pre="S" #start
+        stack=[]
+        for digit in s:
+            if sym[digit]<=sym[pre]:
+                stack.append(int(sym[digit]))
+            elif sym[digit]>sym[pre]:
+                stack.pop()
+                stack.append(int(sym[digit]-int(sym[pre])))
+            pre = digit
+        return sum(stack)
