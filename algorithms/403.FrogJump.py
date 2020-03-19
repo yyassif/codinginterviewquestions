@@ -11,3 +11,7 @@ class Solution:
             visited.add((val,step))
             return jump(val+step,step-1) or jump(val+step, step) or jump(val+step, step+1)
         return jump(stones[0], 1)
+
+#analysis
+# Time complexity : O(3^n) Recursion tree can grow upto 3^n
+# Space complexity : O(n) Recursion of depth n is used.
