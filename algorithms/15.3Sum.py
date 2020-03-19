@@ -1,4 +1,6 @@
 #two pointer sol https://leetcode.com/problems/3sum/discuss/534179/Python-O(n2)-sol.-by-two-pointers.-80%2B-w-Hint
+#sol based on similar and easier problem
+#related problem (easy) https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
 class Solution: 
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         nums.sort()
@@ -31,4 +33,3 @@ class Solution:
                         j -= 1
         return solution
 
-#related problem (easy) https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
