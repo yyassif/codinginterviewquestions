@@ -30,3 +30,5 @@ class Solution:
                     while i < j and nums[j] == nums[j+1]:
                         j -= 1
         return solution
+
+#related problem (easy) https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
