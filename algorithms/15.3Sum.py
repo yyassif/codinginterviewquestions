@@ -8,7 +8,7 @@ class Solution:
         solution = []
         for idx in range(0, size-2):
 			# avoid repetition
-            if idx and nums[idx] == nums[idx-1]:
+            if idx and nums[idx] == nums[idx-1]: #idx is at least 1. e.g. avoid [[0,0,0]]
                 idx +=1
                 pass
                 continue
