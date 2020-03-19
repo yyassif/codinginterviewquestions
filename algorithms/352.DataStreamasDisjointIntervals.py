@@ -42,22 +42,22 @@ class SummaryRanges(object):
         i = bisect_left(self.int, val)
         if not self.int:
             self.int.append([val, val])
-        elif i == 0:
+        elif i == 0:  #leftmost
             if self.int[i][0] == val + 1:
                 self.int[i][0] = val
             else:
                 self.int.insert(i, [val, val])
-        elif i == len(self.int):
-            if self.int[i-1][1] == val - 1:
+        elif i == len(self.int):  #rightmost
+            if self.int[i-1][1] == val - 1:  #check if new val can be merged w/ last interval. 
                 self.int[i-1][1] = val
             else:
                 self.int.append([val, val])
-        elif self.int[i-1][1] == val - 1:
+        elif self.int[i-1][1] == val - 1:     # e.g. [1,2],[4,4] and val =3
             self.int[i-1][1] = val
             if self.int[i][0] == val + 1: #check next interval since new val has been added and merge
                 self.int[i-1][1] = self.int[i][1]
                 self.int.pop(i)
-        elif self.int[i][0] == val + 1: #update ith interval
+        elif self.int[i][0] == val + 1: #update ith interval  e.g. [1,2] [6,6] and val=5
             self.int[i][0] = val
         else:
             self.int.insert(i, [val, val])
