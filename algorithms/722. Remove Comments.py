@@ -15,7 +15,7 @@ class Solution:
                     i+=1
                 elif not in_block and line[i:i+2]=="//": #break if line comment within block comment
                     break
-                elif not in_block:   #all else, if not in block comment, add line up to index i
+                elif not in_block:   #all else, if not in block comment, add line up to index i one by one
                     newline.append(line[i])
                 i+=1
             #combine result in case of multi-line block comment
