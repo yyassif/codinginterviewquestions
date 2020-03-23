@@ -87,16 +87,16 @@ def inorder(root):
             curr = stack.pop()
             yield curr.data
             curr = curr.right
-        
-def swap_nodes(indexes, queries):
+#swap nodes in the levels listed in queries array.
+def swap_nodes(indexes, queries): 
     root = build_tree(indexes)
-    for k in queries:
+    for k in queries: #levels where nodes need to be swapped left and right
         h = 1
         q = deque([root])
         while q:
             for _ in range(len(q)):
                 node = q.popleft()
-                if h % k == 0:
+                if h % k == 0: #if current level h matches level k in queries then swap
                     node.left, node.right = node.right, node.left
                 q += filter(None, (node.left, node.right))
             h += 1
