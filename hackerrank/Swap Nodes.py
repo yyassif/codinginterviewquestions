@@ -70,7 +70,7 @@ def build_tree(indexes):
     f = lambda x: None if x == -1 else Node(x)
     children = [list(map(f,x)) for x in indexes]
     nodes = {n.data: n for n in filter(None, sum(children, []))}
-    nodes[1] = Node(1)
+    nodes[1] = Node(1) #root node is 1
     for idx, child_pair in enumerate(children):
         nodes[idx+1].left = child_pair[0]
         nodes[idx+1].right = child_pair[1]
