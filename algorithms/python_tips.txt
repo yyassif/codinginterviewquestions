@@ -197,3 +197,9 @@ https://www.geeksforgeeks.org/bisect-algorithm-functions-in-python/
 a= [1,2,2,3]
 bisect_left(a,2) returns 1
 bisect_right(a,2) returns 3
+
+#filter
+filtered = filter(fun, sequence) #fun=function that returns true or false based on a parameter
+#sequence - array of values
+#https://www.geeksforgeeks.org/filter-in-python/
+
