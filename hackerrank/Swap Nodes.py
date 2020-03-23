@@ -1,3 +1,6 @@
+#TODO
+# * learn :construct binary tree from an array level order
+# * learn :iterative inorder traversal using stack
 #sol from hackerank discussions
 import sys
 sys.setrecursionlimit(2000)
