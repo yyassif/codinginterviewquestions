@@ -61,6 +61,7 @@ for i in range(T):
     #print('depth',depth)
     
 #sol 2    
+from collections import deque
 class Node:
     def __init__(self, d):
         self.data = d
