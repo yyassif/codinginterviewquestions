@@ -11,7 +11,7 @@ class Solution:
                     
             if count == 0: #copy ouput to detect cycles
                 first_day = output[:]
-            elif cur == first_day: #if cycle detected, only run remaining
+            elif output == first_day: #if cycle detected, only run remaining
                 N %= count
             
             cells = output[:]
