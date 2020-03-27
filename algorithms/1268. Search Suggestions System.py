@@ -16,3 +16,25 @@ class Solution:
                 new_possible_products.append(product)
         self.possible_products = new_possible_products
         return self.possible_products[:3]
+
+#brute force
+class Solution:
+    def suggestedProducts(self, products: List[str], searchWord: str) -> List[List[str]]:
+        ret = []
+        for i in range(1,len(searchWord)+1):
+            arr = []
+            for product in products:
+                idx=-1
+                try:
+                    idx = product.index(searchWord[:i])
+                except:
+                    pass
+                if idx==0:
+                    arr.append(product)
+            if arr:
+                arr.sort()
+                ret.append(arr[:3])
+            else:
+                ret.append([])
+        return ret
+        
