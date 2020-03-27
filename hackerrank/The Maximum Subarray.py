@@ -5,5 +5,5 @@ def maxSubarray(arr):
         current_max=max(arr[i],current_max+arr[i])
         max_sum=max(max_sum,arr[i],arr[i]+max_sum)
         global_max=max(global_max,current_max)
-    m.extend([global_max,max_sum])
+    m.extend([global_max,max_sum])  #global_max=subarray, max_sum=sub_sequence
     return m
