@@ -1,9 +1,8 @@
 def maxSubarray(arr):
-    m=[]
-    current_max=global_max=max_sum=arr[0]
-    for i in range(1,len(arr)):
-        current_max=max(arr[i],current_max+arr[i])
-        max_sum=max(max_sum,arr[i],arr[i]+max_sum)
-        global_max=max(global_max,current_max)
-    m.extend([global_max,max_sum])  #global_max=subarray, max_sum=sub_sequence
-    return m
+    n=len(arr)
+    temp = maxsub=maxseq=arr[0]
+    for i in range(1,n):
+        temp = max(arr[i], temp+arr[i])
+        maxseq = max(arr[i], maxseq, maxseq+arr[i])  #maxseq = max sequence sum. diff is to compare arr[i] with running sum, prev sum
+        maxsub = max(maxsub,temp) #max sub = max subarray sum
+    return maxsub, maxseq
