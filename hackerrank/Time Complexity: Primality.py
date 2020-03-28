@@ -1,4 +1,7 @@
 #efficient sol
+#since all primes are of the form 6n + 1 or 6n-1, 
+#this can be used to reduce the number of checks further than
+#the given best editorial solution giving 15446, 10922, 7722 checks respectively.
 def primality(n):
     if n == 1 :
         return 'Not prime'
@@ -15,7 +18,18 @@ def primality(n):
         i += 6
     print('Checks performed : ', count)
     return 'Prime'
-    
+ #easier and efficient sol
+def primality(n):
+    if n < 2:
+        return 'Not prime'
+    elif n == 2:
+        return 'Prime'
+    ans = 'Prime'
+    for i in range(2, int((n+1) ** 0.5) + 1):
+        if n % i == 0:
+            ans = 'Not prime'
+            break
+    return ans
  #sieve of Eratosthenes is not efficient way to solve this problem, as it finds all prime numbers between 2 and N
  def primality(n):
     arr = [False]*(n+1)
