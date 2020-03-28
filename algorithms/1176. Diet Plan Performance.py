@@ -1,20 +1,23 @@
 #https://leetcode.com/problems/diet-plan-performance/discuss/373642/Python-sliding-window
-def dietPlanPerformance(self, calories, k, lower, upper):
-    points = 0
-    total = sum(calories[0:k])
-    if total < lower:
-        points -= 1
-    if total > upper:
-        points += 1   
-    i = 1
-    while i+k-1 < len(calories):
-        total = total - calories[i-1]+ calories[i+k-1]
-        if total < lower:
-            points -= 1
-        if total > upper:
-            points += 1
-        i += 1
-    return points
+class Solution:
+    def dietPlanPerformance(self, calories: List[int], k: int, lower: int, upper: int) -> int:
+        n = len(calories)
+        score=0
+        total =sum(calories[0:k])
+        
+        if total<lower:
+            score-=1
+        elif total>upper:
+            score+=1
+        print(total,score)
+        for i in range(1,n-k+1):
+            total = total-calories[i-1]+calories[i+k-1] #remove last value and add new value to the total
+            if total<lower:
+                score-=1
+            elif total>upper:
+                score+=1
+            print(total, score, calories[i-1], calories[i+k-1])
+        return score
 
 # brute force - time limit exceeded
 class Solution:
