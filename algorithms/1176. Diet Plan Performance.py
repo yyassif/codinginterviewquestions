@@ -1,4 +1,5 @@
 #https://leetcode.com/problems/diet-plan-performance/discuss/373642/Python-sliding-window
+#sliding window solution
 class Solution:
     def dietPlanPerformance(self, calories: List[int], k: int, lower: int, upper: int) -> int:
         n = len(calories)
