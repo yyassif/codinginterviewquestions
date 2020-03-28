@@ -11,7 +11,7 @@ class Solution:
         elif total>upper:
             score+=1
         print(total,score)
-        for i in range(1,n-k+1):
+        for i in range(1,n-k+1): #index starts at 1. sliding window offset by 1. 
             total = total-calories[i-1]+calories[i+k-1] #remove last value and add new value to the total
             if total<lower:
                 score-=1
