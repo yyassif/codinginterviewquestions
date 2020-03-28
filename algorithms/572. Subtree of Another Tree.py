@@ -14,7 +14,7 @@ class Solution:
                 return False
             elif a and b is None:
                 return False
-            return a.val==b.val or equals(a.left, b.left) or equals(a.right, b.right)
+            return a.val==b.val or equals(a.left, b.left) or equals(a.right, b.right) #cautious of OR. not and
         def trav(a,b):
             return (a is not None) and (equals(a,b) or 
                                         trav(a.left, b.left) or
