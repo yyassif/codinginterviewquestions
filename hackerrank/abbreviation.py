@@ -1,7 +1,7 @@
 #simpler sol
 def abbreviation(a, b):
     m, n = len(a), len(b)
-    dp = [[False]*(m+1) for _ in range(n+1)]
+    dp = [[False]*(m+1) for _ in range(n+1)] #create (n+1) by (m+1) table of truth values
     dp[0][0] = True
     for i in range(n+1):
         for j in range(1,m+1):
