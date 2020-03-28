@@ -14,17 +14,21 @@ class Solution:
         start, end, ret = 0, len(products)-1, []
         for n_th, c in enumerate(searchWord):
             # Check between start and end to prevent unusable move
-            # Check lenth of current "product string" to prevent "search word" longer than "product string"
+            #if product smaller than the searchWord, increment start
+            #check if searchWord longer than product
             while start <= end and (products[start][n_th] < c if len(products[start])>n_th else True):
                 start += 1
+            #if product bigger than the searchWord, decrease end
             while start <= end and (products[end][n_th] > c if len(products[end])>n_th else True):
                 end -= 1
                 
             # Append at most three element array
             ret.append(products[start:start+3] if end > start+1 else products[start:end+1])
         return ret
-
-#sol https://github.com/daniel22c/codinginterviewquestions/new/master/algorithms
+#end of solution
+    
+# sol 2
+# https://github.com/daniel22c/codinginterviewquestions/new/master/algorithms
 #Only check whether the current character of the searchWord is at the same index in a product.
 #Only search products that have previously been considered.
 class Solution:
