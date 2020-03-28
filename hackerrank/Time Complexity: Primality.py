@@ -18,7 +18,9 @@ def primality(n):
         i += 6
     print('Checks performed : ', count)
     return 'Prime'
- #easier and efficient sol
+#end of sol
+
+#easier and efficient sol
 def primality(n):
     if n < 2:
         return 'Not prime'
