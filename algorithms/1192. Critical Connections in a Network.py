@@ -19,7 +19,7 @@ class Solution:
         for child in dic[cur]:
             if child == par:
                 continue
-            if steps[child] == -1: #it is a root
+            if steps[child] == -1: #unvisited
                 min_step = self.helper(child, cur, level+1, steps, dic, res)
                 steps[cur] = min( steps[cur], min_step)
             else:
