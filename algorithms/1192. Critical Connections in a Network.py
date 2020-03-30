@@ -13,13 +13,13 @@ class Solution:
         self.helper(0,-1,0,steps,dic,res)
         return res
         
-    def helper(self, cur, par, level, steps, dic,res):
+    def helper(self, cur, par, level, steps, dic,res): #par=parent
         steps[cur] = level
         
         for child in dic[cur]:
             if child == par:
                 continue
-            if steps[child] == -1:
+            if steps[child] == -1: #it is a root
                 min_step = self.helper(child, cur, level+1, steps, dic, res)
                 steps[cur] = min( steps[cur], min_step)
             else:
