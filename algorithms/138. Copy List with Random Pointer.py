@@ -8,7 +8,7 @@ class Node:
 """
 class Solution:
     def __init__(self):
-        self.map = {}
+        self.map = {}   #key=original node, val= copied node, same with recursive sol. 
     def getNode(self,node):
         if node:
             if node in self.map:
