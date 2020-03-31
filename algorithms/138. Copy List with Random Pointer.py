@@ -28,15 +28,16 @@ class Solution(object):
 
         # Unweave the linked list to get back the original linked list and the cloned list.
         # i.e. A->A'->B->B'->C->C' would be broken to A->B->C and A'->B'->C'
-        ptr_old_list = head # A->B->C
-        ptr_new_list = head.next # A'->B'->C'
-        head_old = head.next  #new head A'
-        while ptr_old_list:
-            ptr_old_list.next = ptr_old_list.next.next #jump A' to A->B
-            ptr_new_list.next = ptr_new_list.next.next if ptr_new_list.next else None jump B to A'->B'
-            ptr_old_list = ptr_old_list.next  #jump to the next pointer
-            ptr_new_list = ptr_new_list.next  
-        return head_old
+        node = head # A->B->C
+        new_head = new_node = head.next # A'->B'->C'
+        while node:
+            if node.next:
+                node.next = node.next.next #jump A' to A->B
+            if new_node.next:
+                new_node.next = new_node.next.next if new_node.next else None jump B to A'->B'
+            node = node.next
+            new_node = new_node.next  #jump to the next pointer
+        return new_head
 
 
 
