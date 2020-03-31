@@ -12,9 +12,9 @@ class Solution(object):
             # Inserting the cloned node just next to the original node.
             # If A->B->C is the original linked list,
             # Linked list after weaving cloned nodes would be A->A'->B->B'->C->C'
-            new_node.next = ptr.next
-            ptr.next = new_node
-            ptr = new_node.next
+            new_node.next = ptr.next   #A->A'->B
+            ptr.next = new_node        #A->A'
+            ptr = new_node.next        #ptr =B
 
         ptr = head
 
