@@ -1,5 +1,6 @@
 #discussion https://leetcode.com/discuss/interview-question/373006/Amazon-or-OA-2019-or-Favorite-Genres/391841
 #problem : https://aonecode.com/amazon-online-assessment-questions#g
+#leetcode playground solution https://leetcode.com/playground/KCLirPgs
 #solution
 def favorite_genres(userSongs, songGenres):
     song2genres, output = {}, {}
