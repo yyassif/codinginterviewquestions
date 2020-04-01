@@ -72,3 +72,66 @@ def favorite_genres(userSongs, songGenres):
         favorite_genres = [genre for genre in genre_counter if genre_counter[genre] == most_common_number]
         output[user] = favorite_genres
     return output
+
+
+
+##############MY SOLUTION
+def initialize():
+    userSongs = {  
+       "David": ["song1", "song2", "song3", "song4", "song8"],
+       "Emma":  ["song5", "song6", "song7"]
+    }
+    songGenres = {  
+       "Rock":    ["song1", "song3"],
+       "Dubstep": ["song7"],
+       "Techno":  ["song2", "song4"],
+       "Pop":     ["song5", "song6"],
+       "Jazz":    ["song8", "song9"]
+    }
+    
+    # userSongs = {  
+    #  "David": ["song1", "song2"],
+    #  "Emma":  ["song3", "song4"]
+    # }
+    # songGenres = {}
+    
+    # converting given input to sets
+    for user in userSongs:
+        userSongs[user] = set(userSongs[user])
+        
+    for genre in songGenres:
+        songGenres[genre] = set(songGenres[genre])
+    
+    return userSongs, songGenres
+from collections import Counter
+def favGenres(users, genres):
+    map= {}
+    for name in users:
+        songs = users[name]
+        for song in songs:
+            for genre in genres:
+                g_songs = genres[genre]
+                for g_song in g_songs:
+                    if g_song==song:
+                        if name not in map:
+                            map[name] = [genre]
+                        else:
+                            map[name].append(genre)
+    for name in map:
+        g_arr = map[name]
+        counter = collections.Counter(g_arr)
+        arr = list(counter)
+        arr.sort(key=lambda x:counter[x], reverse=True) #contains genres
+        temp=[]
+        if len(arr)>1 and counter[arr[0]]==counter[arr[1]]:
+            temp = [arr[0],arr[1]]
+        else:
+            temp.append(arr[0])
+        map[name] = temp
+    return map
+            
+        
+
+if __name__ == '__main__':
+    userSongs, songGenres = initialize()
+    print(favGenres(userSongs, songGenres))
