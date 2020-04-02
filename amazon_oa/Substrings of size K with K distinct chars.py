@@ -1,21 +1,23 @@
 #Amazon OA question : https://leetcode.com/discuss/interview-question/370112
-#more efficient sol
+#efficient sol
+#solution same as 3. Longest Substring Without Repeating Characters except it checks for lengths=k and adds it to a set
 s = "abcabc"
 k = 3
-n = len(s)
 def substringk(s, k):
-    if not s or k == 0:
+    n = len(s)
+    if n<k or k == 0:
         return []
     
-    letter, res = {}, set()
-    start = 0
-    for i in range(len(s)):
-        if s[i] in letter and letter[s[i]] >= start:
-            start = letter[s[i]]+1
-        letter[s[i]] = i
-        if i-start+1 == k:
-            res.add(s[start:i+1])
-            start += 1
+    map, res = {}, set()
+    i = 0
+    for j in range(n):
+        c= s[j]
+        if c in map:
+            i = map[c]+1
+        map[c] = j
+        if j-i+1==k:   #
+            res.add(s[i:j+1])
+            i += 1
     return list(res)
 ret = substringk(s,k)
 print(ret)
