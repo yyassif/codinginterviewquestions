@@ -8,16 +8,16 @@ class Solution:
         map={}
         i=0
         j=0
-        maxsize=0
+        maxi=0
         while j<n:
-            if map.get(s[j])!=None:
-                i = max(i, map.get(s[j]))
+            if s[j] in map:
+                i = max(i, map[s[j]])
             # if s[j] have a duplicate in the range [i, j) with index j'
             #skip all the elements in the range [i, j'] and let i to be j' + 1 directly.
             map[s[j]] = j+1   #rather than sliding window by one, update i to j'+1 directly
-            maxsize = max(maxsize,j-i+1)
+            maxi = max(maxi,j-i+1)
             j+=1
-        return maxsize
+        return maxi
 
 #less efficient sliding window sol
 class Solution:
