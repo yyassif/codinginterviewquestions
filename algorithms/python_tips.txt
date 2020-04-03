@@ -204,6 +204,7 @@ filtered = filter(fun, sequence) #fun=function that returns true or false based 
 #https://www.geeksforgeeks.org/filter-in-python/
 
 #how to create n x x matrix properly
+# DO NOT USE m=[[0]*n]*n as it copies rows and you lose data
 n=5
 m=[[0 for _ in range(n)] for _ in range(n)]
 [[0, 0, 0, 0, 0],
