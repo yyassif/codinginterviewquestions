@@ -1,3 +1,22 @@
+# OOOO
+# OOOO
+# OOOO
+# OOOO
+
+# Top 
+# XXX
+# Right
+# X
+# X
+# X
+# Bottom
+# XXX
+# Left 
+# X
+# X
+# X
+# finish with  T ->R->B->L for one each side for the inner 2x2
+
 class Solution:
     def generateMatrix(self, n: int) -> List[List[int]]:
         cnt=1
