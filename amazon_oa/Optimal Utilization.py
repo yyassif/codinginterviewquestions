@@ -12,7 +12,7 @@ def findPairs(a, b, target):
 		if (target - i - j == curDiff):
 			ans.append([id1, id2])
 		elif (i + j <= target and target - i - j < curDiff): #found new pair whose sum is closer to the target than previous ones
-			ans.clear()
+			ans.clear() #only keep one unless sum==target
 			ans.append([id1, id2])
 			curDiff = target - i - j
 		if (target > i + j):
