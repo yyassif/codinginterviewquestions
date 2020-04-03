@@ -1,4 +1,5 @@
 #Amazon OA  Optimal Utilization
+#from https://leetcode.com/discuss/interview-question/373202
 def findPairs(a, b, target):
 	a.sort(key=lambda x: x[1])
 	b.sort(key=lambda x: x[1])
