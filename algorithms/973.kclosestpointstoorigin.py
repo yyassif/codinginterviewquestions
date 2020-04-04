@@ -12,3 +12,17 @@ class Solution:
         for i in range(K):
             ret.append(heapq.heappop(arr)[1])
         return ret
+#divide and conquer- O(n)
+
+    
+#use sort O(nlogn)
+class Solution:
+    def kClosest(self, points: List[List[int]], K: int) -> List[List[int]]:
+        arr = []
+        for idx,point in enumerate(points):
+            print("point:",point)
+            x,y = point
+            arr.append((x**2+y**2, idx))
+        arr.sort()
+        ret = [points[tuple[1]] for tuple in arr[:K]]
+        return ret
