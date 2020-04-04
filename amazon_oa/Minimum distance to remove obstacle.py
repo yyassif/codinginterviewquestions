@@ -7,19 +7,11 @@ You are in charge of preparing a recently purchased lot for Amazon’s building.
   1 is path and 9 is the obstacle set on its path.
   * I assume the path starts at lot[0][0]
 '''
-numRows = 3,
-numColumns = 3
-lot = [
-[1, 0, 0],
-[1, 0, 0],
-[1, 9, 1]
-]
-
-def remove_obstacle(lot, nr,nc):
-    # nr = len(lot)
+def remove_obstacle(lot):
+    nr = len(lot)
     if nr==0:
         return -1
-    # nc = len(lot[0])
+    nc = len(lot[0])
     if nc==0:
         return -1
     q=[]
@@ -63,5 +55,23 @@ def remove_obstacle(lot, nr,nc):
             lot[i + 1][j] = 2
             q.append((i+1,j,cnt+1))
     return -1
-moves = remove_obstacle(lot,3,3)
-print(moves)
+#Test Cases
+lot = [
+[1, 0, 0, 0],
+[1, 0, 0, 0],
+[1, 0, 0, 0],
+[1, 9, 1, 1]
+]
+moves = remove_obstacle(lot)
+print(lot)
+print("min dist:",moves)
+
+lot = [
+[1, 0, 0, 0],
+[1, 1, 0, 0],
+[0, 1, 0, 0],
+[0, 9, 1, 1]
+]
+moves = remove_obstacle(lot)
+print(lot)
+print("min dist:",moves)
