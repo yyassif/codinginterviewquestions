@@ -1,6 +1,6 @@
 #973. K Closest Points to Origin
 
-#divide and conquer- O(n)
+#divide and conquer- quickselect algo O(n)
 class Solution(object):
     def kClosest(self, points, K):
         dist = lambda i: points[i][0]**2 + points[i][1]**2
