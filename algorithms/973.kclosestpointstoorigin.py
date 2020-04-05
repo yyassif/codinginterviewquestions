@@ -41,6 +41,7 @@ class Solution(object):
         sort(0, len(points) - 1, K)
         return points[:K]
 #solution using heapq
+# O(nlogk) time and O(k) space, because there are K elements in the heap.
 import heapq
 class Solution:
     def kClosest(self, points: List[List[int]], K: int) -> List[List[int]]:
