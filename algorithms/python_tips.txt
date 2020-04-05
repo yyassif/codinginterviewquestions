@@ -212,3 +212,7 @@ m=[[0 for _ in range(n)] for _ in range(n)]
  [0, 0, 0, 0, 0],
  [0, 0, 0, 0, 0],
  [0, 0, 0, 0, 0]]
+#check if a string consist of numbers
+>>> a="123"
+>>> a.isnumeric()
+True
