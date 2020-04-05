@@ -9,11 +9,6 @@ class Solution(object):
             # Partially sorts A[i:j+1] so the first K elements are
             # the smallest K elements.
             if i >= j: return
-
-            # Put random element as A[i] - this is the pivot
-            k = random.randint(i, j)
-            points[i], points[k] = points[k], points[i]
-
             mid = partition(i, j)
             if K < mid - i + 1:
                 sort(i, mid - 1, K)
