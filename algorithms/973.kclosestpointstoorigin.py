@@ -13,7 +13,8 @@ class Solution(object):
             if K < mid - i + 1:  #e.g. N=25, first bucket=10, 2nd=15, K=5, then only sort the first bucket
                 sort(i, mid - 1, K) #only need to sort the first K in the first bucket(left of mid poviot)
             elif K > mid - i + 1:
-                sort(mid + 1, j, K - (mid - i + 1))  # K greater than pivot, find the remainder of K (K-size of 1st bucket) in the 2nd bucket 
+                # K greater than pivot, find the remainder of K (K-size of 1st bucket) in the 2nd bucket 
+                sort(mid + 1, j, K - (mid - i + 1))  
 
         def partition(i, j):
             # Partition by pivot A[i], returning an index mid
