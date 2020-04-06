@@ -18,7 +18,7 @@ class Solution:
             maxi = max(len1, len2) #find max center length
             if maxi>end-start: #update max center start, end
                 #e.g maxi is 3 when len(substr)==5 and 4 when len(substr)==6
-                #e.g. if maxi=3, i=3,start=0 and end=
+                #e.g s="aabaa", i=2, maxi=5, start=0 and end=5, 
                 start = i-(maxi-1)//2   
                 end = i+maxi//2
             print("1,2,m,s,e,sub",n1,n2,maxi,start,end,s[start:end+1])
