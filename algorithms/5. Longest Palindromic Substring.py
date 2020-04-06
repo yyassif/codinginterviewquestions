@@ -10,6 +10,7 @@ class Solution:
             while 0<=a and b<n and s[a]==s[b]:
                 a-=1
                 b+=1
+            print("a b",a,b,b-a-1) #expands to a=-1 and b==n
             return b-a-1
         for i in range(n):
             len1 = expand(i,i)   #grow i to the left when i>0
@@ -20,7 +21,7 @@ class Solution:
                 #e.g. if maxi=3, i=3,start=0 and end=
                 start = i-(maxi-1)//2   
                 end = i+maxi//2
-            print(len1, len2, maxi, start, end)
+            print("1,2,m,s,e,sub",n1,n2,maxi,start,end,s[start:end+1])
         return s[start:end+1]
         
             
