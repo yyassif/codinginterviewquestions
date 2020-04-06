@@ -24,8 +24,8 @@ class Solution:
             if steps[child] == -1: #unvisited
                 min_step = self.dfs(child, cur, level+1, steps, dic, res)
                 steps[cur] = min( steps[cur], min_step) #propagate minimum edge/step down to its children
-            else:
-                steps[cur] = min(steps[child],steps[cur])
+            else: #vertex is visited
+                steps[cur] = min(steps[cur],steps[child])  #if it points back to child==parent, it will update w/ parent's min step value
         if steps[cur] == level and cur !=0: #articulation point. not root. its step equals level
             res.append([cur,par])
         return steps[cur]
