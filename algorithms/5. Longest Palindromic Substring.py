@@ -16,7 +16,9 @@ class Solution:
             len2 = expand(i,i+1) # allow i to grow to the right when i=0
             maxi = max(len1, len2) #find max center length
             if maxi>end-start: #update max center start, end
-                start = i-(maxi-1)//2
+                #e.g maxi is 3 when len(substr)==5 and 4 when len(substr)==6
+                #e.g. if maxi=3, i=3,start=0 and end=
+                start = i-(maxi-1)//2   
                 end = i+maxi//2
             print(len1, len2, maxi, start, end)
         return s[start:end+1]
