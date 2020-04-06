@@ -21,10 +21,10 @@ class Solution:
         for child in dic[cur]: #dic contains all the vertices #child== "to", cur="at"
             if child == par: #skip parent
                 continue
-            if steps[child] == -1: #unvisited
+            if steps[child] == -1: #if "to" is unvisited
                 min_step = self.dfs(child, cur, level+1, steps, dic, res)
                 steps[cur] = min( steps[cur], min_step) #propagate minimum edge/step down to its children
-            else: #vertex is visited
+            else: #if "to" vertex is visited
                 steps[cur] = min(steps[cur],steps[child])  #if it points back to child==parent, it will update w/ parent's min step value
         if steps[cur] == level and cur !=0: #articulation point. not root. its step equals level
             res.append([cur,par])
