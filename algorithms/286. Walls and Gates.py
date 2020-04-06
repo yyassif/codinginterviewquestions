@@ -1,5 +1,5 @@
-#286. Walls and Gates
-#time limited exceeded
+#286. Walls and Gates.py
+#my own sol using bfs
 class Solution:
     def wallsAndGates(self, rooms: List[List[int]]) -> None:
         """
@@ -13,18 +13,18 @@ class Solution:
             return rooms
         INF = 2**31-1
         def valid(a,b,visited):
-            if 0<=a<nr and 0<=b<nc and 0<rooms[a][b]<=INF and visited[a][b]==0:
+            if 0<=a<nr and 0<=b<nc and 0<rooms[a][b]<=INF and (a,b) not in visited:
                 return True
             return False
         def bfs(a,b):
-            visited = [[0 for _ in range(nc)] for _ in range(nr)]
+            visited = set()
             q=[]
             q.append((a,b,0))
-            visited[a][b]=1
+            visited.add((a,b))
             while q:
                 i,j,step = q.pop(0)
-                print(i,j,step)
-                visited[i][j]=1
+                # print(i,j,step)
+                visited.add((i,j))
                 if rooms[i][j] > step:
                     rooms[i][j] = step
                 if valid(i,j-1,visited):
