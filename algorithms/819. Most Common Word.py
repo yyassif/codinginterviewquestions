@@ -1,15 +1,20 @@
 #819. Most Common Word
-from collections import Counter
+import collections
 class Solution:
     def mostCommonWord(self, paragraph: str, banned: List[str]) -> str:
-        punc = "!?,';."
-        for c in punc:
-            paragraph = paragraph.replace(c," ")
-        d = dict(Counter(paragraph.lower().split()))
-        most_w,most_freq ='',-1
-        for word,freq in d.items():
-            if word not in banned:
+        punc = ".,!?';:"
+        for idx,para in enumerate(paragraph):
+            if para in punc:
+                paragraph = paragraph.replace(para," ")
+        print(paragraph)
+        arr = collections.Counter(paragraph.lower().split(" "))
+        print(arr)
+        most_freq = 0
+        most_word = ''
+        for word, freq in arr.items():
+            if word !="" and word not in banned:
                 if freq>most_freq:
-                    most_w = word
                     most_freq = freq
-        return most_w
+                    most_word = word
+        return most_word
+        
