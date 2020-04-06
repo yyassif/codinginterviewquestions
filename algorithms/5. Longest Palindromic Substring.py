@@ -12,8 +12,8 @@ class Solution:
                 b+=1
             return b-a-1
         for i in range(n):
-            len1 = expand(i,i)
-            len2 = expand(i,i+1)
+            len1 = expand(i,i)   #grow i to the left when i>0
+            len2 = expand(i,i+1) # allow i to grow to the right when i=0
             maxi = max(len1, len2) #find max center length
             if maxi>end-start: #update max center start, end
                 start = i-(maxi-1)//2
