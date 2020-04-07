@@ -18,6 +18,7 @@ class Solution:
             map[c] = j+1   #rather than sliding window by one, update i to j'+1 directly
             maxi = max(maxi,j-i+1)
         return maxi
+# e.g. s="pwwkew", i moves to 3 @w j moves to 5 at e. max = j-i+1=5-3+1=3
 
 #less efficient sliding window sol
 class Solution:
