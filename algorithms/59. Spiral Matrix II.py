@@ -24,7 +24,7 @@ class Solution:
         m=[[0 for _ in range(n)] for _ in range(n)]
         a=0
         b=n-1
-        while a<b:
+        while a<b: #or side>1 works too
             #Top
             for i in range(a,b):
                 m[a][i]=cnt
@@ -54,7 +54,7 @@ class Solution:
         c=n-1
         cnt=1
         loop=0
-        while (side>=1 and n%2==0) or (side>1 and n%2==1):
+        while side>1:
             for i in range(loop,side):
                 m[r][i] = cnt
                 cnt+=1
