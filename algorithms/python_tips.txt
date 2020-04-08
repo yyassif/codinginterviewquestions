@@ -216,3 +216,10 @@ m=[[0 for _ in range(n)] for _ in range(n)]
 >>> a="123"
 >>> a.isnumeric()
 True
+
+#replace chars using sub
+>>> a
+'ajfkdjf ; kdjfkdjfj , jdfkdf? kjsdkfjksdfkj'
+>>> rs = sub("[^a-z]", " ", a)
+>>> rs
+'ajfkdjf   kdjfkdjfj   jdfkdf  kjsdkfjksdfkj'
