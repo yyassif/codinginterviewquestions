@@ -1,4 +1,47 @@
 # https://leetcode.com/discuss/interview-question/542597/
+from re import sub
+from collections import defaultdict
+def top_K_freq_keywords(keywords, reviews, k):
+	if not k or not keywords or not reviews: return []
+	keys = set(keywords)
+	word_count = defaultdict(int)
+	for rev in reviews:
+		words = rev.lower().split(" ")
+		added = set()
+		for word in words:
+			word = sub("[^a-z]", "", word)
+			if word in keys and word not in added:
+				word_count[word] += 1
+				added.add(word)
+	result = sorted(word_count.keys(), key=lambda x: (-word_count[x], x))
+	return result[:k]
+
+keywords1 = ["anacell", "betacellular", "cetracular", "deltacellular", "eurocell"]
+reviews1 = [
+  "I love anacell Best services; Best services provided by anacell",
+  "betacellular has great services",
+  "deltacellular provides much better services than betacellular",
+  "cetracular is worse than anacell",
+  "Betacellular is better than deltacellular.",
+]
+
+keywords = ["anacell", "cetracular", "betacellular"]
+reviews = [
+  "Anacell provides the best services in the city",
+  "betacellular has awesome services",
+  "Best services provided by anacell, everyone should use anacell",
+]
+
+Following is the output:
+
+>>> top_K_freq_keywords(keywords1, reviews1, 2)
+['betacellular', 'anacell']
+>>> top_K_freq_keywords(keywords, reviews, 2)
+['anacell', 'betacellular']
+Space Complexity: O(n)
+RTC: O(n+k*logn)
+
+
 k = 2
 keywords = ["anacell", "cetracular", "betacellular"]
 reviews = [
