@@ -127,7 +127,37 @@ Related problems:
 
 https://leetcode.com/problems/top-k-frequent-words/
 https://leetcode.com/problems/top-k-frequent-elements/
+#############################################################################################################
+def topKFreqKeywords(reviews: List[str], keywords: List[str], k: int) -> List[str]:
+    # clean review strings
+    rs = [r.lower().translate(str.maketrans('','',string.punctuation)) for r in reviews]
+    hashmap = dict.fromkeys(keywords, 0) # hashtable with keywords set to 0
+    # can't figure out how to get around this double for loop
+    for r in rs:
+        for key in keywords:
+            if key in r: hashmap[key] += 1
+    return heapq.nlargest(k, hashmap.keys(), hashmap.get)
+    
+reviews = [
+  "Anacell provides the best services in the city",
+  "betacellular has awesome services",
+  "Best services provided by anacell, everyone should use anacell",
+]
+keywords = ["anacell", "cetracular", "betacellular"]
+k = 2
 
+kay = 2
+keywordss = ["anacell", "betacellular", "cetracular", "deltacellular", "eurocell"]
+reviewss = [
+  "I love anacell Best services; Best services provided by anacell",
+  "betacellular has great services",
+  "deltacellular provides much better services than betacellular",
+  "cetracular is worse than anacell",
+  "Betacellular is better than deltacellular.",
+]
+assert topKFreqKeywords(reviews,keywords,k) == ["anacell", "betacellular"]
+assert topKFreqKeywords(reviewss,keywordss,kay) == ["betacellular", "anacell"]
+#############################################################################################################
 # sol 1
 # space Complexity: O(n)
 # RTC: O(n+k*logn)
