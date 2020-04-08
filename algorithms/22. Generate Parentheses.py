@@ -1,3 +1,22 @@
+#backtracking sol
+class Solution:
+    def generateParenthesis(self, n: int) -> List[str]:
+        ret = []
+        def gen(s='', l=0, r=0):
+            print(s)
+            if len(s)==2*n:
+                ret.append(s)
+                return
+            if l<n:
+                gen(s+'(', l+1, r)
+            if r<l:
+                gen(s+')', l, r+1)
+        gen()
+        return ret
+    
+#END OF EFFICIENT SOL -  BACKTRACKING
+
+#brute force
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
         ret= []
