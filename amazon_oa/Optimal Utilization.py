@@ -7,18 +7,18 @@ def findPairs(a, b, target):
 	ans = []
 	curDiff = float('inf')
 	while l < len(a) and r >= 0:
-		id1, i = a[l]
-		id2, j = b[r]
-		if (target - i - j == curDiff):
+		id1, va = a[l]
+		id2, vb = b[r]
+		if (target - va - vb == curDiff):
 			ans.append([id1, id2])
-		elif (i + j <= target and target - i - j < curDiff): #found new pair whose sum is closer to the target than previous ones
+		elif (va + vb <= target and target - va - vb < curDiff): #found new pair whose sum is closer to the target than previous ones
 			ans.clear() #only keep one unless sum==target
 			ans.append([id1, id2])
-			curDiff = target - i - j
-		if (target > i + j):
+			curDiff = target - va - vb
+		if (va + vb<target):
 			l += 1
 		else:
-			if target == i + j:
+			if target == va + vb:
 				tmp_l = l
 				while a[tmp_l][1] + b[r][1] == target:
 					tmp_l += 1
