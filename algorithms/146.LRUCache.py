@@ -40,3 +40,46 @@ class LRUCache(OrderedDict):
 # obj = LRUCache(capacity)
 # param_1 = obj.get(key)
 # obj.put(key,value)
+
+
+#my own sol
+class LRUCache:
+
+    def __init__(self, capacity: int):
+        self.cap =capacity
+        self.map = {}
+        self.arr = []
+        
+    def get(self, key: int) -> int:
+        if key in self.map:
+            idx = self.arr.index(key)
+            del self.arr[idx]
+            self.arr.append(key)
+            return self.map[key]
+        return -1
+
+    def put(self, key: int, value: int) -> None:
+        #update if key already in map
+        if key in self.map:
+            idx = self.arr.index(key)
+            del self.arr[idx]
+            self.arr.append(key)
+            self.map[key] = value
+            return
+        #if full, evict the least used
+        if len(self.map)==self.cap:
+            #evict least used
+            least = self.arr[0]
+            del self.arr[0]
+            del self.map[least]
+            self.map[key] = value
+            self.arr.append(key)
+        else: #simply add to the map and array for tracking usage
+            self.map[key] = value
+            self.arr.append(key)
+
+
+# Your LRUCache object will be instantiated and called as such:
+# obj = LRUCache(capacity)
+# param_1 = obj.get(key)
+# obj.put(key,value)
