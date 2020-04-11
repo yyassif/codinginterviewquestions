@@ -1,3 +1,31 @@
+#two pointer sol
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        x = height
+        left = 0
+        right = len(x) - 1
+
+        left_max = 0
+        right_max = 0
+        answer = 0
+
+        while left < right:
+            if x[left] < x[right]:
+                if x[left] >= left_max:
+                    left_max = x[left]
+                else:
+                    answer += left_max - x[left]
+
+                left += 1
+            else:
+                if x[right] >= right_max:
+                    right_max = x[right]
+                else:
+                    answer += right_max - x[right]
+
+                right -= 1
+        return answer
+    
 #stack sol time-O(n) ,space O(n)
 class Solution:
     def trap(self, height: List[int]) -> int:
