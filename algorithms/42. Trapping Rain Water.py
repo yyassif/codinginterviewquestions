@@ -1,3 +1,22 @@
+#stack sol time-O(n) ,space O(n)
+class Solution:
+    def trap(self, height: List[int]) -> int:
+        
+        stack =[]
+        area = 0
+        
+        for i in range(len(height)):
+            offset = 0
+            while(stack and height[i] >= height[stack[-1]]):
+                pre_i = stack.pop()
+                area += (height[pre_i]-offset) * (i-pre_i-1)
+                offset = height[pre_i]
+            if stack:
+                area += (height[i]-offset) * (i-stack[-1]-1)
+            stack.append(i)
+            
+        return area
+    
 #dynamic programming based on brute force sol
 class Solution:
     def trap(self, height: List[int]) -> int:
