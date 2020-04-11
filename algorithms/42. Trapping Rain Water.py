@@ -9,7 +9,7 @@ class Solution:
             offset = 0
             while(stack and height[i] >= height[stack[-1]]):
                 pre_i = stack.pop()
-                area += (height[pre_i]-offset) * (i-pre_i-1)
+                area += (height[pre_i]-offset) * (i-pre_i-1)   #idx needs to be at least one apart. e.g. [2,0,2]
                 offset = height[pre_i]
             if stack:
                 area += (height[i]-offset) * (i-stack[-1]-1)
