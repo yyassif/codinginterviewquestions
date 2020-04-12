@@ -1,3 +1,4 @@
+#runtime - nlogn , space O(n)
 class Solution:
     def minMeetingRooms(self, intervals: List[List[int]]) -> int:
         n = len(intervals)
