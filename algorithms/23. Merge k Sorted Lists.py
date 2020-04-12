@@ -1,22 +1,21 @@
 #sol using priorityqueue runtime-O(nlogk) k=num of lists, space = O(n) creating new linkedlist
-from Queue import PriorityQueue
-
-class Solution(object):
-    def mergeKLists(self, lists):
-        """
-        :type lists: List[ListNode]
-        :rtype: ListNode
-        """
-        head = point = ListNode(0)
-        q = PriorityQueue()
-        for l in lists:
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, x):
+#         self.val = x
+#         self.next = None
+import heapq
+class Solution:
+    def mergeKLists(self, lists: List[ListNode]) -> ListNode:
+        q=[]
+        n = len(lists)
+        for i,l in enumerate(lists):
             if l:
-                q.put((l.val, l))
-        while not q.empty():
-            val, node = q.get()
-            point.next = ListNode(val)
-            point = point.next
+                heapq.heappush(q,(l.val,i, l))
+        node =head = ListNode(None)
+        while q:
+            _,i,node.next = heapq.heappop(q)
             node = node.next
-            if node:
-                q.put((node.val, node))
+            if node.next:
+                heapq.heappush(q, (node.next.val,i,  node.next))
         return head.next
