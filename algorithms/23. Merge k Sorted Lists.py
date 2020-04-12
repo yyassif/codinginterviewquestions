@@ -17,5 +17,5 @@ class Solution:
             _,i,node.next = heapq.heappop(q)
             node = node.next
             if node.next:
-                heapq.heappush(q, (node.next.val,i,  node.next))
+                heapq.heappush(q, (node.next.val,i,  node.next)) #i added in case of ties. it val equals, it will cause error by comparing nodes
         return head.next
