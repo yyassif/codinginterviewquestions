@@ -1,4 +1,4 @@
-#sol using priorityqueue runtime-O(nlogk) k=num of lists, space = O(n) creating new linkedlist
+#sol using heapq runtime-O(nlogk) k=num of lists, space = O(n) creating new linkedlist
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, x):
