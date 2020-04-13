@@ -223,3 +223,22 @@ True
 >>> rs = sub("[^a-z]", " ", a)
 >>> rs
 'ajfkdjf   kdjfkdjfj   jdfkdf  kjsdkfjksdfkj'
+
+###combinations
+from itertools import combinations 
+  
+def rSubset(arr, r): 
+  
+    # return list of all subsets of length r 
+    # to deal with duplicate subsets use  
+    # set(list(combinations(arr, r))) 
+    return list(combinations(arr, r)) 
+  
+# Driver Function 
+if __name__ == "__main__": 
+    arr = [1, 2, 3, 4] 
+    r = 2
+    print rSubset(arr, r) 
+Output:
+
+[[1, 2], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4]]
