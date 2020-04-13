@@ -11,7 +11,7 @@ def serialize(self, root):
             dq.append(node.right)
         else:
             ans.append('')
-    while ans and not ans[-1]:
+    while ans and not ans[-1]: #get rid of empty '' strings in ans array
         ans.pop()
     return ','.join(ans)
 
