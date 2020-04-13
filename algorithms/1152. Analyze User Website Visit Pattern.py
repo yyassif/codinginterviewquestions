@@ -27,7 +27,7 @@ class Solution:
         return heapq.heappop(res)
     
     def helper(self, lst):
-		# Iterate ALL possible 3-sequence
+		# Iterate ALL possible UNIQUE 3-sequence
         res = set()
         for l in range(len(lst)-2):
             for m in range(l+1, len(lst)-1):
