@@ -1,4 +1,7 @@
 # Serialize process run time O(T), space O(T)
+# Serialize tree by DFS and preorder traversal
+# e.g. [1,2,3,null,null,4,5]
+# e.g. encode tree to 1,2,None,None,3,4,None,None,5,None,None
 # Deserialize process run time O(T), space O(1) (O(depth) including calling stack)
 def __init__(self):
     self.data = []
