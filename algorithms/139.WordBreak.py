@@ -1,5 +1,5 @@
 # 139. Word Break from leetcode
-#brute force solution
+#brute force solution - passes some cases,time limit exceeded
 s = "cars"
 wordDict = ["car","ca","rs"]
 size = len(s)
