@@ -6,9 +6,9 @@ class Solution(object):
     def wordBreak(self, s, wordDict): 
         if not s: return False
         if s in wordDict: return True
-        for w in wordDict:
-            if w==s[:len(w)]:
-                if s[len(w):] not in self.d:
+        for w in wordDict: 
+            if w==s[:len(w)]:  #check the front part of string s if any words in wordDict matches
+                if s[len(w):] not in self.d: #check the remainder of substring s
                     self.d[s[len(w):]] = self.wordBreak(s[len(w):], wordDict)
                     if  self.d[s[len(w):]]:   return True
         return False	
