@@ -37,17 +37,17 @@ class Solution:
     /         \
     dog       dog
         """
-        visited = set()
-        queue = deque([0])
+        visited = set() #store starting points to prevent revisitng
+        queue = deque([0]) #store end points=next starting point
         while queue:
             start = queue.popleft()
             if start not in visited:
-                for end in range(start + 1, len(s)+1):
+                for end in range(start + 1, len(s)+1): #start one after the end points
                     if s[start:end] in wordDict:
-                        queue.append(end)
+                        queue.append(end) #store the next starting point
                         if end == len(s):
                             return True
-                visited.add(start)
+                visited.add(start) #mark start as visited
         return False
 
 
