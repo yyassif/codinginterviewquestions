@@ -13,6 +13,44 @@ class Solution(object):
                     if  self.d[s[len(w):]]:   return True
         return False	
 
+#########################################################################    
+#BFS method
+from collections import deque
+class Solution:
+    def wordBreak(self, s: str, wordDict: List[str]) -> bool:
+        """
+		s = "catsandog"
+		wordDict = ["cats", "dog", "sand", "and", "cat"]
+        0 1 2 3 4 5 6 7 8 9
+        c a t s a n d d o g
+		queue = [0]
+		you find 'cat' and 'cats'
+		queue = [3,4]
+		you find 'and‘  and 'sand'
+		queue = [7]
+		you find 'dog', which you reached the end.
+         0
+        / \
+      cat  cats
+      /      \
+    sand     and
+    /         \
+    dog       dog
+        """
+        visited = set()
+        queue = deque([0])
+        while queue:
+            start = queue.popleft()
+            if start not in visited:
+                for end in range(start + 1, len(s)+1):
+                    if s[start:end] in wordDict:
+                        queue.append(end)
+                        if end == len(s):
+                            return True
+                visited.add(start)
+        return False
+
+
 #########################################################################
 #brute force solution - passes some cases,time limit exceeded
 s = "cars"
