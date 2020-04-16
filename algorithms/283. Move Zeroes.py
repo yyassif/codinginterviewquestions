@@ -1,4 +1,6 @@
 # most efficient run O(n), space=O(1) sol
+#  1. All elements before the slow pointer (lastNonZeroFoundAt) are non-zeroes.
+#  2. All elements between the current and slow pointer are zeroes.
 class Solution:
     def moveZeroes(self, nums: List[int]) -> None:
         """
