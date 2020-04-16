@@ -12,7 +12,7 @@ class Solution:
             if row+1<n:
                 heapq.heappush(heap,(matrix[row+1][col], row+1, col))  # insert new value from row below. because current row is already in
         return val
-
+######################################################################################################################
 #brute force using heap would be O(log(n^2) since you put all the itmes in and use heap to get k items. 
 import heapq
 class Solution:
