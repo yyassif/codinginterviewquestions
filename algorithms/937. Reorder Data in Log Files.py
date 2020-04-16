@@ -4,7 +4,6 @@ class Solution:
     def reorderLogFiles(self, logs: List[str]) -> List[str]:
         def order(x):
             arr = x.split(" ")
-            #sort :nums first. characters come next
             is_alpha = arr[1].isnumeric() #check if numbers after ID
             if is_alpha:
                 return is_alpha, []
