@@ -6,7 +6,7 @@ class Solution:
             arr = x.split(" ")
             is_alpha = arr[1].isnumeric() #check if numbers after ID
             if is_alpha:
-                return is_alpha, []
+                return is_alpha, [] # in case of numbers, return (True, a blank array)
             else: #chars come next
                 #return False, rest of list after id and id
                 return is_alpha, arr[1:], arr[0] 
