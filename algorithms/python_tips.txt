@@ -242,3 +242,13 @@ if __name__ == "__main__":
 Output:
 
 [[1, 2], [1, 3], [1, 4], [2, 3], [2, 4], [3, 4]]
+
+#max heap in python ( default is min-heap. heappop pops out smallest in heap)
+import heapq
+listForTree = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]    
+heapq.heapify(listForTree)             # for a min heap
+heapq._heapify_max(listForTree)        # for a maxheap!!
+If you then want to pop elements, use:
+
+heapq.heappop(minheap)      # pop from minheap
+heapq._heappop_max(maxheap) # pop from maxheap
