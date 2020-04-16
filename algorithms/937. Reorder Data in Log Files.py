@@ -9,8 +9,8 @@ class Solution:
                 return is_alpha, [] # in case of numbers, return (True, a blank array)
             else: #chars come next
                 #return False, rest of list after id and id
-                return is_alpha, arr[1:], arr[0] 
-        return sorted(logs, key=order)
+                return is_alpha, arr[1:], arr[0]  #ascending order sort=False comes first
+        return sorted(logs, key=order)  
 
 #####################################################################
 #sol2 comentary sol- run- O(n log n) , space O(n) , n=total content of logs
