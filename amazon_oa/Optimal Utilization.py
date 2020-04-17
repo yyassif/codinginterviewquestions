@@ -10,7 +10,7 @@ def findPairs(a, b, target):
 		id1, va = a[l]
 		id2, vb = b[r]
 		if (target - va - vb == curDiff):
-			ans.append([id1, id2])
+			ans.append([id1, id2]) #add as many pairs if it matches target
 		elif (va + vb <= target and target - va - vb < curDiff): #found new pair whose sum is closer to the target than previous ones
 			ans.clear() #only keep one unless sum==target
 			ans.append([id1, id2])
