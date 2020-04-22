@@ -252,3 +252,19 @@ If you then want to pop elements, use:
 
 heapq.heappop(minheap)      # pop from minheap
 heapq._heappop_max(maxheap) # pop from maxheap
+
+#python inheritance, abstract classes
+
+
+# setattr
+https://www.programiz.com/python-programming/methods/built-in/setattr
+class Person:
+    name = 'Adam'
+    
+p = Person()
+print('Before modification:', p.name)
+
+# setting name to 'John'
+setattr(p, 'name', 'John')
+
+print('After modification:', p.name)
