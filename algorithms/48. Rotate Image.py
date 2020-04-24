@@ -11,7 +11,7 @@ class Solution:
                 matrix[j][i],matrix[i][j] = matrix[i][j],matrix[j][i]
         for i in range(n):
             matrix[i].reverse()
-                
+#sol 2          
 class Solution:
     def rotate(self, matrix):
         n = len(matrix[0])
@@ -29,3 +29,19 @@ class Solution:
                 for k in range(4):
                     matrix[row][col] = tmp[(k - 1) % 4] #rotate temp arr @k=0:-1->3, k=1->0, k=2->1,k=3->2
                     row, col = col, n - 1 - row
+#sol3 pass through matrix once
+class Solution:
+    def rotate(self, matrix):
+        """
+        :type matrix: List[List[int]]
+        :rtype: void Do not return anything, modify matrix in-place instead.
+        """
+        n = len(matrix[0])        
+        # rotate the four corners. iterate through the matrix by shifting
+        for i in range(n // 2 + n % 2):
+            for j in range(n // 2):
+                tmp = matrix[n - 1 - j][i]  #store copy of of the first cell
+                matrix[n - 1 - j][i] = matrix[n - 1 - i][n - j - 1]
+                matrix[n - 1 - i][n - j - 1] = matrix[j][n - 1 -i]
+                matrix[j][n - 1 - i] = matrix[i][j]
+                matrix[i][j] = tmp
