@@ -41,8 +41,9 @@ class Solution:
         for i in range(n // 2 + n % 2):
             for j in range(n // 2):
                 #swap with opposite corners
+                #IMPORTANT [j][i] <- [i][j]   #notice this pattern
+                #          [i][j] <- [j][i] next
                 tmp = matrix[n - 1 - j][i]  #store copy of of the first cell
-                #IMPORTANT [J..**][i]  =           [I***][J....*]
                 matrix[n - 1 - j][i] = matrix[n - 1 - i][n - j - 1]   #working backwards, 2,0=2,2
                 matrix[n - 1 - i][n - j - 1] = matrix[j][n - 1 -i]    #2,2=0,2
                 matrix[j][n - 1 - i] = matrix[i][j]                   #0,2=0,0
