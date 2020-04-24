@@ -268,3 +268,9 @@ print('Before modification:', p.name)
 setattr(p, 'name', 'John')
 
 print('After modification:', p.name)
+
+# // does not truncate toward zero
+>>> 6//-132
+-1
+>>> 3//-2
+-2
