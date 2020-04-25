@@ -1,5 +1,6 @@
 # https://leetcode.com/problems/alien-dictionary/discuss/581952/94-faster-Kahn's-Algo
 #BFS topological sorting / Kahn's algo
+from collections import defaultdict
 class Solution:
     def alienOrder(self,words):
         chars = {c for x in words for c in x }
