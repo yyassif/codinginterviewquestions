@@ -3,7 +3,7 @@
 from collections import defaultdict
 class Solution:
     def alienOrder(self,words):
-        chars = {c for x in words for c in x }
+        chars = {c:0 for x in words for c in x }
         
         graph = defaultdict(list)
         i_degree = defaultdict(int)
@@ -22,12 +22,12 @@ class Solution:
         L = []  #return array
 
         while Q:
-            n = Q.pop(0) #BFS here but work either way BFS/DFS
-            L.append(n)    #add to return list since in_degree==0
+            node = Q.pop(0) #BFS here but work either way BFS/DFS
+            L.append(node)    #add to return list since in_degree==0
 
-            for node in graph[n]:
-                i_degree[node] -= 1
-                if i_degree[node] == 0:
-                    Q.append(node)
+            for neighbor in graph[node]:
+                i_degree[neighbor] -= 1
+                if i_degree[neighbor] == 0:
+                    Q.append(neighbor)
 
         return "".join(L) if len(L) == len(chars) else ""
