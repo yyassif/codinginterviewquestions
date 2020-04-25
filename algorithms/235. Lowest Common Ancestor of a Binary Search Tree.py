@@ -63,13 +63,13 @@ class Solution:
                 return False
 
             # Left Recursion
-            left = recurse_tree(current_node.left)
+            left = recurse_tree(current_node.left) #returns truth value
 
             # Right Recursion
             right = recurse_tree(current_node.right)
 
             # If the current node is one of p or q
-            mid = current_node == p or current_node == q
+            mid = current_node == p or current_node == q #returns true value
 
             # If any two of the three flags left, right or mid become True.
             if mid + left + right >= 2:
