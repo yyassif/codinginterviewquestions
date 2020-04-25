@@ -8,7 +8,7 @@ class Solution:
         i_degree = defaultdict(int)
 
         for word1, word2 in zip(words, words[1:]):
-            for char1, char2 in zip(word1, word2):
+            for char1, char2 in zip(word1, word2): #compare letter by letter for each words
                 if char1 != char2:
                     graph[char1].append(char2)
                     i_degree[char2] += 1
@@ -17,11 +17,11 @@ class Solution:
                 if len(word1) > len(word2): return ""
 
         Q = [x for x in chars if i_degree[x] == 0]
-        L = []
+        L = []  #return array
 
         while Q:
             n = Q.pop(0) #BFS here but work either way BFS/DFS
-            L.append(n)
+            L.append(n)    #add to return list since in_degree==0
 
             for node in graph[n]:
                 i_degree[node] -= 1
