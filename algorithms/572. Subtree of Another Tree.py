@@ -14,7 +14,7 @@ class Solution:
                 return False
             return a.val==b.val and equals(a.left, b.left) and equals(a.right, b.right)
         def trav(a,b): #only one needs to branch off for comparison
-            return (a is not None) and (equals(a,b) or 
+            return a and (equals(a,b) or 
                                         trav(a.left, b) or #it's just b, not b.left
                                         trav(a.right, b))  
         return trav(s,t)
