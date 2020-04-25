@@ -14,7 +14,8 @@ class Solution:
                     graph[char1].append(char2)
                     i_degree[char2] += 1
                     break
-            else:
+            #DO NOT CHANGE INDENTATION
+            else: #IMPORTANT - FOR ELSE clause. https://book.pythontips.com/en/latest/for_-_else.html
                 if len(word1) > len(word2): return ""
 
         Q = [x for x in chars if i_degree[x] == 0]
