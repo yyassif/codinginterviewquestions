@@ -20,7 +20,7 @@ class Solution:
         L = []
 
         while Q:
-            n = Q.pop()
+            n = Q.pop(0) #BFS here but work either way BFS/DFS
             L.append(n)
 
             for node in graph[n]:
