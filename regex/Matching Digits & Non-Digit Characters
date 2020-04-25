@@ -1,0 +1,12 @@
+#solutions
+r"\d\d\D\d\d\D\d\d\d\d"
+(\d{2}\D){2}\d{4}
+^\d{2}\D\d{2}\D\d{4,}$
+
+#tips
+https://regexone.com/
+^…$	Starts and ends
+\d	Any Digit
+\D	Any Non-digit character
+{m}	m Repetitions
+{m,n}	m to n Repetitions
