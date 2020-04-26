@@ -1,0 +1,3 @@
+#find all letters matched by regex1 not preceded by regex2  (regex2)regex1
+Regex_Pattern = r"(?<![aeiouAEIOU])."	# Do not delete 'r'.
+# 7 matches- > thiiaoe
