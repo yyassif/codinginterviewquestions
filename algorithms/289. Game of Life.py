@@ -1,3 +1,40 @@
+#in place algo - space- O(1), runtime-O(nxm)
+class Solution:
+    def gameOfLife(self, board: List[List[int]]) -> None:
+        """
+        Do not return anything, modify board in-place instead.
+        """
+        m = len(board)
+        if m==0:
+            return board
+        n = len(board[0])
+        if n==0:
+            return board
+        def valid(a,b):
+            if 0<=a<m and 0<=b<n:
+                return True
+        directions = [(0,-1),(-1,-1),(-1,0),(-1,1),(0,1),(1,1),(1,0),(1,-1)]
+        for i in range(m):
+            for j in range(n):
+                #count how many live=1 or dead=0 cells surrounding cell (i,j)
+                cnt_live=0
+                for direc in directions:
+                    if valid(i+direc[0],j+direc[1]):
+                        if board[i+direc[0]][j+direc[1]]==1 or board[i+direc[0]][j+direc[1]]==-1:
+                            cnt_live+=1
+                if (board[i][j]==1 and cnt_live<2) or \
+                    (board[i][j]==1 and cnt_live>3):
+                    board[i][j]=-1
+                elif board[i][j]==0 and cnt_live==3:
+                    board[i][j]=2
+        for i in range(m):
+            for j in range(n):
+                if board[i][j]==-1:
+                    board[i][j]=0
+                elif board[i][j]==2:
+                    board[i][j]=1
+                    
+#######################################################################################################
 # uses a copy of matrix space/runtime O(M*N)
 class Solution:
     def gameOfLife(self, board: List[List[int]]) -> None:
