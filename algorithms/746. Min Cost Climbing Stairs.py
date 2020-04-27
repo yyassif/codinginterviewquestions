@@ -2,8 +2,8 @@
 class Solution(object):
     def minCostClimbingStairs(self, cost):
         f1 = f2 = 0
-        for x in reversed(cost):
-            f1, f2 = x + min(f1, f2), f1
+        for x in reversed(cost): #work backwards in the list
+            f1, f2 = x + min(f1, f2), f1   #add new value to the minimum and swap
         return min(f1, f2)
 
 #dynamic programming, forward, space and runtime - O(n)
