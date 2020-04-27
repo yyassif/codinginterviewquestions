@@ -1,3 +1,18 @@
+#greedy  run-O(n), space - O(1)
+class Solution:
+    def validPalindrome(self, s: str) -> bool:
+        def valid(a,b):
+            for i in range(a,b):
+                if s[i]!=s[b-i+a]:
+                    return False
+            return True
+        n=len(s)
+        success=True
+        for i in range(n//2):
+            if s[i]!=s[~i]:
+                j=n-i-1
+                return valid(i+1,j) or valid(i,j-1)
+        return True
 #brute force time limit exceeded, time- O(n^2), space - O(n)
 class Solution:
     def validPalindrome(self, s: str) -> bool:
