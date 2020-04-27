@@ -1,3 +1,12 @@
+#dynamic programming , backward, space O(1), run O(n)
+class Solution(object):
+    def minCostClimbingStairs(self, cost):
+        f1 = f2 = 0
+        for x in reversed(cost):
+            f1, f2 = x + min(f1, f2), f1
+        return min(f1, f2)
+
+#dynamic programming, forward, space and runtime - O(n)
 class Solution:
     def minCostClimbingStairs(self, cost: List[int]) -> int:
         n=len(cost)
