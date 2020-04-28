@@ -27,6 +27,7 @@ class Solution:
         return intervals
 ###################################################################################
 #connected component sol - space/runtime O(n^2)
+#time limit exceeded
 class Solution:
     def overlap(self, a, b): #START <= NEXT_END AND END>=NEXT_START
         return a[0] <= b[1] and a[1]>=b[0]
