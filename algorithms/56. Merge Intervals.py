@@ -1,3 +1,4 @@
+#sorting method time-O(nlogn) space O(1)
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
         n=len(intervals)
