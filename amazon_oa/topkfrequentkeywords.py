@@ -25,8 +25,6 @@ reviews1 = [
   "cetracular is worse than anacell",
   "Betacellular is better than deltacellular.",
 ]
-arr= top_K_freq_keywords(keywords1,reviews1,3)
-print(arr)
 
 keywords = ["anacell", "cetracular", "betacellular"]
 reviews = [
@@ -34,6 +32,12 @@ reviews = [
   "betacellular has awesome services",
   "Best services provided by anacell, everyone should use anacell",
 ]
+
+#TEST
+arr= top_K_freq_keywords(keywords1,reviews1,2)
+print(arr)
+arr= top_K_freq_keywords(keywords,reviews,2)
+print(arr)
 
 Following is the output:
 
