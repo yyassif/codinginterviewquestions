@@ -1,4 +1,5 @@
 #simple sol https://leetcode.com/problems/text-justification/discuss/528789/Python-20ms-short-solution-explained
+#sliding window
 def fullJustify(self, words: List[str], maxWidth: int) -> List[str]:
     def justify(s, e, l):
         d = e-s
