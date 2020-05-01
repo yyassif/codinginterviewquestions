@@ -24,7 +24,7 @@ class Solution:
             cur.append(w)
             num_letters +=len(w)
             print(w,cur,num_letters, result)
-        result.append(' '.join(cur)+ ' '*(maxWidth - num_letters-len(cur)+1))
+        result.append(' '.join(cur)+ ' '*(maxWidth - num_letters-len(cur)+1)) #left justify the last line. len(cur)+1==spaces btw words
         return result
 ####################################################################################################################
 #sol 3 https://www.youtube.com/watch?v=RORuwHiblPc
