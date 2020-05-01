@@ -1,3 +1,30 @@
+#sol 2 https://www.youtube.com/watch?v=r-F1sCTmZxA
+class Solution:
+    def fullJustify(self, words: List[str], maxWidth: int) -> List[str]:
+        if not words:
+            return
+        result = []
+        cur = []
+        num_letters=0
+        for w in words:
+            if num_letters + len(cur)+len(w) > maxWidth:
+                if len(cur)==1:
+                    result.append(cur[0]+' '*(maxWidth-num_letters))
+                else:
+                    num_spaces = maxWidth - num_letters
+                    space_between_words, extra = divmod(num_spaces, len(cur)-1)
+                    for i in range(extra):
+                        cur[i]+=' '
+                    result.append((' '*space_between_words).join(cur))
+                cur = []
+                num_letters = 0
+            cur.append(w)
+            num_letters +=len(w)
+            print(w,cur,num_letters, result)
+        result.append(' '.join(cur)+ ' '*(maxWidth - num_letters-len(cur)+1))
+        return result
+####################################################################################################################
+
 #simple sol https://leetcode.com/problems/text-justification/discuss/528789/Python-20ms-short-solution-explained
 #sliding window
 def fullJustify(self, words: List[str], maxWidth: int) -> List[str]:
