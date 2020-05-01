@@ -27,8 +27,8 @@ class Solution(object):
 			else: #if "to" vertex is visited
 				levels[cur] = min(levels[cur], levels[adj])
 		if levels[cur]==level+1 and cur!=0: #articulation point. not root. its step equals level
-			self.ret.append(par)
-		return levels[cur]
+			self.ret.append(par) #return par==from node
+		return levels[cur] 
 
 
 def main():
