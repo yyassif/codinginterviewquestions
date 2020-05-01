@@ -4,46 +4,31 @@ Python solution, the same idea in 1192. Critical Connections in a Network.
 
 Time complexity: O(n)
 Space complexity: O(n)
+
 import collections
-
 class Solution(object):
-    def critical_routers(self, numNodes, numEdges, edges):
-        """
-        :type numNodes: int
-        :type numEdges: int
-        :type edges: List[List[int]]
-        :rtype: List[int]
-        """
-
-        self.value_graph = collections.defaultdict(list)
-        value_list = [-1] * numNodes
-        self.res = []
-
-        for i in range(numEdges):
-            a, b = edges[i]
-            self.value_graph[a].append(b)
-            self.value_graph[b].append(a) 
-
-        self.dfs(-1, 0, 0, value_list)
-
-        return self.res
-
-    def dfs(self, a, b, count, value_list):
-        value_list[b] = count + 1
-        
-        for node in self.value_graph[b]:
-            if node == a:
-                continue
-            elif value_list[node] == -1:
-                temp_value = self.dfs(b, node, count + 1, value_list)
-                value_list[b] = min(value_list[b], temp_value)
-            else:
-                value_list[b] = min(value_list[b], value_list[node])
-                
-        if value_list[b] == count + 1 and b != 0:
-            self.res.append(a)
-                
-        return value_list[b]
+	def critical_routers(self, numNodes, numEdges, edges):
+		self.dic = collections.defaultdict(set)
+		for u,v in edges:
+			self.dic[u].add(v)
+			self.dic[v].add(u)
+		levels=[-1]*numNodes
+		self.ret=[]
+		self.dfs(0,-1,0, levels) #start at "root", par =-1, level=0
+		return self.ret
+	def dfs(self, cur, par, level, levels):
+		levels[cur] = level+1
+		for adj in self.dic[cur]:
+			if adj==par:
+				continue
+			if levels[adj]==-1:
+				temp = self.dfs(adj, cur, level+1, levels)
+				levels[cur] =  min(temp, levels[cur])
+			else:
+				levels[cur] = min(levels[cur], levels[adj])
+		if levels[cur]==level+1 and cur!=0:
+			self.ret.append(par)
+		return levels[cur]
 
 
 def main():
