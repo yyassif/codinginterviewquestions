@@ -16,9 +16,9 @@ class Solution:
                 else:
                     num_spaces = maxWidth - num_letters
                     space_between_words, extra = divmod(num_spaces, len(cur)-1)
-                    for i in range(extra): #add spaces after each word
+                    for i in range(extra): #add EXTRA spaces after each word e.g. 10%3=1 extra
                         cur[i]+=' '
-                    result.append((' '*space_between_words).join(cur))
+                    result.append((' '*space_between_words).join(cur))  #add spaces btw words e.g. 10/3=3 spaces btw words
                 cur = []
                 num_letters = 0
             cur.append(w)
