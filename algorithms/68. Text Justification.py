@@ -1,4 +1,7 @@
 #sol 2 https://www.youtube.com/watch?v=r-F1sCTmZxA
+# 1 word - pad spaces to the right
+# n words - uniformly distribute spaces, round robin:reinitialization
+#words, padded to the right 
 class Solution:
     def fullJustify(self, words: List[str], maxWidth: int) -> List[str]:
         if not words:
