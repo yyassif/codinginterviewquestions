@@ -19,14 +19,14 @@ class Solution(object):
 	def dfs(self, cur, par, level, levels):
 		levels[cur] = level+1
 		for adj in self.dic[cur]:
-			if adj==par:
+			if adj==par: #skip parent
 				continue
-			if levels[adj]==-1:
-				temp = self.dfs(adj, cur, level+1, levels)
-				levels[cur] =  min(temp, levels[cur])
-			else:
+			if levels[adj]==-1: #check if "to" is unvisited
+				min_step = self.dfs(adj, cur, level+1, levels)
+				levels[cur] =  min(min_step, levels[cur])  #propagate minimum edge/step down to its children
+			else: #if "to" vertex is visited
 				levels[cur] = min(levels[cur], levels[adj])
-		if levels[cur]==level+1 and cur!=0:
+		if levels[cur]==level+1 and cur!=0: #articulation point. not root. its step equals level
 			self.ret.append(par)
 		return levels[cur]
 
