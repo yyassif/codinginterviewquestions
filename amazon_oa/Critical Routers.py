@@ -1,9 +1,9 @@
 #Critical Routers
 #https://leetcode.com/discuss/interview-question/436073/
-Python solution, the same idea in 1192. Critical Connections in a Network.
-
-Time complexity: O(n)
-Space complexity: O(n)
+#Python solution, the same idea in 1192. Critical Connections in aNetwork.
+# youtube tutorial https://www.youtube.com/watch?v=aZXi1unBdJA&list=PLQealZQ7ajwjIQUoHHnz17KNG-tixkw6P&index=4&t=0s
+# Time complexity: O(V+E)=O(n)
+# Space complexity: O(n)
 
 import collections
 class Solution(object):
