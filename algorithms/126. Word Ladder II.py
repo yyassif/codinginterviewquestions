@@ -1,3 +1,4 @@
+#more good sol https://leetcode.com/problems/word-ladder-ii/discuss/490116/Three-Python-solution%3A-Only-BFS-BFS%2BDFS-biBFS%2B-DFS
 import collections
 class Solution(object):
     def findLadders(self, beginWord, endWord, wordList):
