@@ -1,41 +1,38 @@
 #more good sol https://leetcode.com/problems/word-ladder-ii/discuss/490116/Three-Python-solution%3A-Only-BFS-BFS%2BDFS-biBFS%2B-DFS
 import collections
-class Solution(object):
-    def findLadders(self, beginWord, endWord, wordList):
-        wordSet = set(wordList)
-        if endWord not in wordSet:
+class Solution:
+    def findLadders(self, beginWord: str, endWord: str, wordList: List[str]) -> List[List[str]]:
+        if endWord not in wordList:
             return []
-        search_que = collections.deque()
-        visited = {}
-        word_len = len(beginWord)
-        visited[beginWord] = 1
-        word_dict = collections.defaultdict(set)
+        dic = collections.defaultdict(set)
+        L = len(beginWord)
         for word in wordList:
-            for i in range(len(word)):
-                new = word[:i] + "?" + word[i+1:]
-                word_dict[new].add(word)
+            for i in range(L):
+                pat = word[:i]+'*'+word[i+1:]
+                dic[pat].add(word)
+        visited={} #store distances
+        visited[beginWord]=1
         prev_dic = {}
-        break_flag = False
-        search_que.append((beginWord, [], 1))
-        rst = []
-        shortest = None
-        while search_que:
-            word_tup = search_que.popleft()
-            word, path, dist = word_tup
-            if shortest and dist > shortest:
+        break_flag=False
+        q=[]
+        q.append((beginWord, [], 1)) #word, path, dist
+        ret = []
+        shortest= float('inf')
+        while q:
+            word, path, dist =q.pop(0)
+            print(word)
+            if dist>shortest:
                 break
-            for ind in range(word_len):
-                cur_word = word[:ind] + "?" + word[ind+1:]
-                neighbors = word_dict[cur_word]
-                for neighbor in neighbors:
-                    if neighbor == word:
+            for i in range(L):
+                pat = word[:i]+'*'+word[i+1:]
+                for adj in dic[pat]:
+                    if adj==word:
                         continue
-                    tup = (neighbor, path + [word], dist + 1)
-                    if neighbor == endWord:
-                        rst.append(tup[1] + [endWord])
-                        shortest = dist
+                    if adj==endWord:
+                        ret.append(path+[word]+[endWord])
+                        shortest=dist
                         continue
-                    if neighbor not in visited or visited[neighbor] >= dist:
-                        search_que.append(tup)
-                        visited[neighbor] = dist
-        return rst  
+                    if adj not in visited or visited[adj]>=dist:
+                        q.append((adj, path+[word],dist+1))
+                        visited[adj]= dist
+        return ret
