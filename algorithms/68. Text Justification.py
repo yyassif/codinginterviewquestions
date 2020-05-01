@@ -24,6 +24,10 @@ class Solution:
         result.append(' '.join(cur)+ ' '*(maxWidth - num_letters-len(cur)+1))
         return result
 ####################################################################################################################
+#sol 3 https://www.youtube.com/watch?v=RORuwHiblPc
+#dynamic programming approach
+
+####################################################################################################################
 
 #simple sol https://leetcode.com/problems/text-justification/discuss/528789/Python-20ms-short-solution-explained
 #sliding window
