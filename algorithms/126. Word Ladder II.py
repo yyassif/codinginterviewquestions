@@ -31,7 +31,7 @@ class Solution:
                         ret.append(path+[word]+[endWord])
                         shortest=dist
                         continue
-                    if adj not in visited or visited[adj]>=dist:
+                    if adj not in visited or visited[adj]>=dist: #found shorter step
                         q.append((adj, path+[word],dist+1))
                         visited[adj]= dist
         return ret
