@@ -25,6 +25,8 @@ reviews1 = [
   "cetracular is worse than anacell",
   "Betacellular is better than deltacellular.",
 ]
+arr= top_K_freq_keywords(keywords1,reviews1,3)
+print(arr)
 
 keywords = ["anacell", "cetracular", "betacellular"]
 reviews = [
