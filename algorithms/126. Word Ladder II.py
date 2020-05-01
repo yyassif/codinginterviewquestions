@@ -13,7 +13,6 @@ class Solution:
         visited={} #store distances
         visited[beginWord]=1
         prev_dic = {}
-        break_flag=False
         q=[]
         q.append((beginWord, [], 1)) #word, path, dist
         ret = []
