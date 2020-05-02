@@ -11,12 +11,13 @@ class Solution:
         def bfs(a,b,idx):
             if idx==len(word):
                 return True
-            if 0<=a<nr and 0<=b<nc and (a,b) not in visited and board[a][b]==word[idx]:
-                visited.add((a,b))
+            if 0<=a<nr and 0<=b<nc and (a,b) and board[a][b]!="#" \
+                and board[a][b]==word[idx]:
+                temp = board[a][b]
+                board[a][b] = "#"
                 result =  False or bfs(a+1,b,idx+1) or bfs(a-1, b, idx+1)\
                     or bfs(a,b-1,idx+1) or bfs(a,b+1,idx+1)
-                
-                visited.remove((a,b))
+                board[a][b] = temp
                 return result
         for i in range(nr):
             for j in range(nc):
@@ -26,5 +27,7 @@ class Solution:
                     if result:
                         return result
         return False
+                    
+                    
                     
                     
