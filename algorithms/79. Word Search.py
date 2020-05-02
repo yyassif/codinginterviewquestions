@@ -1,20 +1,30 @@
-#dfs and visited sol, recursive sol
+#recursive dfs sol
 class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
-        def dfs(word,i,j):
-            if not word: # If we have seen all the matching characters in a word, we're done.
+        nr=len(board)
+        if nr==0:
+            return False
+        nc = len(board[0])
+        if nc==0:
+            return False
+        visited=set()
+        def bfs(a,b,idx):
+            if idx==len(word):
                 return True
-            else:
-                if i < 0 or j < 0 or i > len(board)-1 or j > len(board[0])-1 or board[i][j] != word[0]:
-                    return
-                temp = board[i][j]
-                board[i][j] = '#'
-                result = False or dfs(word[1:],i+1,j) or dfs(word[1:],i-1,j) or dfs(word[1:],i,j-1) or dfs(word[1:],i,j+1) # we can also write len(word) == 0 in place of False
-                board[i][j] = temp
+            if 0<=a<nr and 0<=b<nc and (a,b) not in visited and board[a][b]==word[idx]:
+                visited.add((a,b))
+                result =  False or bfs(a+1,b,idx+1) or bfs(a-1, b, idx+1)\
+                    or bfs(a,b-1,idx+1) or bfs(a,b+1,idx+1)
+                
+                visited.remove((a,b))
                 return result
-            
-        for i in range(len(board)):
-            for j in range(len(board[0])):
-                if dfs(word,i,j):
-                    return True
+        for i in range(nr):
+            for j in range(nc):
+                if board[i][j]==word[0]: #matches starting letter
+                    visited=set()
+                    result = bfs(i,j,0)
+                    if result:
+                        return result
         return False
+                    
+                    
