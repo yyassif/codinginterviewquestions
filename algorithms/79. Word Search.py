@@ -1,6 +1,6 @@
 #recursive dfs sol
 #time complexity run - O(N*M*4^L )  where N and M are row/cols and L is num of letters in the word
-#space -O(L)
+#space -O(1)
 class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
         nr=len(board)
@@ -11,7 +11,7 @@ class Solution:
             return False
         visited=set()
         def bfs(a,b,idx):
-            if idx==len(word):
+            if idx==len(word): #words match leading up to idx== len(word)-1
                 return True
             if 0<=a<nr and 0<=b<nc and (a,b) and board[a][b]!="#" \
                 and board[a][b]==word[idx]:
