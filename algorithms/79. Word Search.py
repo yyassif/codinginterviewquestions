@@ -1,4 +1,6 @@
 #recursive dfs sol
+#time complexity run - O(N*M*4^L )  where N and M are row/cols and L is num of letters in the word
+#space -O(L)
 class Solution:
     def exist(self, board: List[List[str]], word: str) -> bool:
         nr=len(board)
