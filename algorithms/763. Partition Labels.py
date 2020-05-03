@@ -1,5 +1,6 @@
 # 763. Partition Labels
-# greedy sol - space and time complexity - O(n)
+# greedy sol - time complexity - O(n)
+# space complexity O(n)=O(1) because input only consist of a to z, 26 letters
 class Solution:
     def partitionLabels(self, S: str) -> List[int]:
         m = {c:i for i,c in enumerate(S)}
