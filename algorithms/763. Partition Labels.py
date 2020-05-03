@@ -1,4 +1,5 @@
 # 763. Partition Labels
+# greedy sol - space and time complexity - O(n)
 class Solution:
     def partitionLabels(self, S: str) -> List[int]:
         m = {c:i for i,c in enumerate(S)}
