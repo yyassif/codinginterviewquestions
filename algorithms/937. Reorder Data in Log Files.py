@@ -4,9 +4,9 @@ class Solution:
     def reorderLogFiles(self, logs: List[str]) -> List[str]:
         def order(x):
             arr = x.split(" ")
-            is_alpha = arr[1].isnumeric() #check if numbers after ID, isdigit() is ok
-            if is_alpha:
-                return is_alpha, [] # in case of numbers, return (True, a blank array), blank array=sort in the original order
+            is_digit = arr[1].isnumeric() #check if numbers after ID, isdigit() is ok
+            if is_digit:
+                return is_digit, [] # in case of numbers, return (True, a blank array), blank array=sort in the original order
             else: #chars come next
                 #return False, rest of list after id and id
                 return is_alpha, arr[1:], arr[0]  #ascending order sort=False comes first
