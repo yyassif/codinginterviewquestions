@@ -46,7 +46,8 @@ class Solution:
             return
         #find the last number larger than first increasing num = last ascending pos
         last_idx=n-1
-        while nums[last_idx]<=nums[inc_idx-1]:
+        #e.g. 847531 starting at end, going backwards, find the first number larger than nums[inc_idx]
+        while nums[last_idx]<=nums[inc_idx-1]:  
             last_idx-=1
         
         nums[inc_idx-1],nums[last_idx] = nums[last_idx],nums[inc_idx-1]
