@@ -18,3 +18,17 @@ Input:
  ['X', 'D', 'D', 'D', 'O']]
 
 Output: 3
+def treasure_island(map):
+    #TODO
+
+def test_driver(input,result):
+    print(input)
+    ret = treasure_island(input)
+    print("expected:58", "result:", ret)
+    assert ret == result
+input = [['S', 'O', 'O', 'S', 'S'],
+ ['D', 'O', 'D', 'O', 'D'],
+ ['O', 'O', 'O', 'O', 'X'],
+ ['X', 'D', 'D', 'O', 'O'],
+ ['X', 'D', 'D', 'D', 'O']]
+test_driver(input,3)
