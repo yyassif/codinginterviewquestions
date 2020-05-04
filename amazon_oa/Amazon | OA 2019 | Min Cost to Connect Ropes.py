@@ -34,6 +34,8 @@ def minCost(ropes):
         if ropes:
             heappush(ropes, a+b)
     return cost
+
+#test drivers
 ropes = [8, 4, 6, 12]
 print(ropes)
 ret= minCost(ropes)
