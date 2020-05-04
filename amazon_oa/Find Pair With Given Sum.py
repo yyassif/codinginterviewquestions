@@ -1,46 +1,29 @@
-class Solution():
-    def FindPair(self, nums, target):
-        assert isinstance(nums, list)
-        assert isinstance(target, int)
+def find_pair(nums, target):
+    dic={}
+    arr=[]
+    for i,num in enumerate(nums):
+        diff = target-num
+        if diff in dic:
+            arr.append([diff,num])
+        dic[num] =i
+    #get the pair with the largest number
+    pair = max(arr)
+    x,y = pair[0],pair[1]
+    #get index of the pair and sort it 
+    i,j = dic[x],dic[y]
+    if i>j:
+        i,j=j,i
+    return [i,j]
+def test_driver(input,target,result):
+    print(input)
+    print(target)
+    ret = find_pair(input, target)
+    print("expected:",result, "result:", ret)
+    assert ret ==result
+input = [1, 10, 25, 35, 60]
+target=60
+test_driver(input,target, [2,3])
 
-        if nums is None:
-            return None
-
-        target = target - 30
-        dic = {}
-        ans = []
-        for i in range(len(nums)):
-            if target - nums[i] in dic:
-                ans.append([dic[target - nums[i]], i])
-            dic[nums[i]] = i
-        return max(ans)
-    
-
-#####################################################
-#sol 2
-nums = [20, 50, 40, 25, 30, 10]
-target = 90-30
-
-map ={}
-x=0 #x is bigger number in the pair
-y=0 #y is smaller number in the pair
-for i,num in enumerate(nums):
-    diff = target-num
-    if diff in map:
-        if x==0 and y==0:
-            if num<diff:
-                x= diff
-                y= num
-            else:  
-                x= num
-                y= diff
-        else:
-            if num<diff:
-                if x<diff:
-                    x= diff
-                    y= num
-            else:
-                if x<num:  
-                    x= num
-                    y= diff
-print(num, diff)
+input = [20, 50, 40, 25, 30, 10]
+target=60
+test_driver(input,target, [1,5])
