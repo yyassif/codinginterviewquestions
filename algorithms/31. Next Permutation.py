@@ -17,8 +17,8 @@ https://www.youtube.com/watch?v=PYXl_yY-rms
 #from https://leetcode.com/problems/next-permutation/discuss/14054/Python-solution-with-comments.
 def nextPermutation(self, nums):
     i = j = len(nums)-1
-    while i > 0 and nums[i-1] >= nums[i]:
-        i -= 1
+    while i > 0 and nums[i-1] >= nums[i]:  #find the first idx of decreasing # when going backwards
+        i -= 1                             #e.g. 847531  <--i=2 ,4 is the number @i-1=1, i=2 is 7
     if i == 0:   # nums are in descending order
         nums.reverse()
         return 
