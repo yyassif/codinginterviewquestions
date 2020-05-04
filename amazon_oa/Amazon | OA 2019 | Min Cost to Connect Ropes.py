@@ -19,6 +19,29 @@ Example 4:
 Input: ropes = [2, 2, 3, 3]
 Output: 20
 
+#my sol
+import heapq
+def minCost(ropes):
+    heapq.heapify(ropes)
+    sumv=0
+    while len(ropes)>1:
+        a = heapq.heappop(ropes)
+        b = heapq.heappop(ropes)
+        sumv+=a+b
+        heapq.heappush(ropes,(a+b))
+    return sumv
+
+def test_driver(ropes,result):
+    print(ropes)
+    ret = minCost(ropes)
+    print("expected:58", "result:", ret)
+    assert ret == result
+test_driver([8, 4, 6, 12],58)
+test_driver([20, 4, 8, 2], 54)
+test_driver([1, 2, 5, 10, 35, 89], 224)
+test_driver([2, 2, 3, 3], 20)
+
+######################################################
 
 from heapq import heappop, heappush, heapify
 def minCost(ropes):
