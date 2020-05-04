@@ -30,3 +30,31 @@ def nextPermutation(self, nums):
     while l < r:
         nums[l], nums[r] = nums[r], nums[l]
         l +=1 ; r -= 1
+#my interpretation of the same code from above
+class Solution:
+    def nextPermutation(self, nums: List[int]) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        #find first increasing
+        n=len(nums)
+        inc_idx=n-1
+        while inc_idx>0 and nums[inc_idx-1]>=nums[inc_idx]:
+            inc_idx-=1
+        if inc_idx==0:
+            nums.reverse()
+            return
+        #find the last number larger than first increasing num = last ascending pos
+        last_idx=n-1
+        while nums[last_idx]<=nums[inc_idx-1]:
+            last_idx-=1
+        
+        nums[inc_idx-1],nums[last_idx] = nums[last_idx],nums[inc_idx-1]
+        #reverse numbers after
+        i=inc_idx
+        j=n-1
+        while i<j:
+            nums[i],nums[j] = nums[j],nums[i]
+            i+=1
+            j-=1
+        
