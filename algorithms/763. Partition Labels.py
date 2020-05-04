@@ -1,6 +1,8 @@
 # 763. Partition Labels
 # greedy sol - time complexity - O(n)
 # space complexity O(n)=O(1) because input only consist of a to z, only extra space for mapping 26 letters
+#e.g. "ababcbacadefegdehijhklij" ->"ababcbaca", "defegde", "hijhklij" ->Output: [9,7,8]
+# watch where a is. idx where a last occurs is m['a']=9. the last idx for b, c is before last of a. 
 class Solution:
     def partitionLabels(self, S: str) -> List[int]:
         m = {c:i for i,c in enumerate(S)}
