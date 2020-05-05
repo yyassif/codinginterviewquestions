@@ -20,8 +20,8 @@ class Solution:
         doubles=[]
         powers=[]
         #e.g. dividend 10000, divisor=30
-        #[30, 60, 120, 240, 480, 960, 1920, 3840, 7680]
-        #[1, 2, 4, 8, 16, 32, 64, 128, 256]
+        #doubles [30, 60, 120, 240, 480, 960, 1920, 3840, 7680]
+        #powers [1, 2, 4, 8, 16, 32, 64, 128, 256]
 
         power=1
         while divisor<=dividend:
