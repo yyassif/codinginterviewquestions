@@ -2,7 +2,6 @@
 // "static void main" must be defined in a public class.
 //filter design pattern tutorial http://www.singhajit.com/filter-design-pattern/
 
-
 //***AND filter and OR filter for UNIX file system search implemented***
 import java.util.ArrayList;
 import java.util.LinkedList;
