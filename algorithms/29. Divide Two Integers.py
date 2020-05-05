@@ -21,8 +21,8 @@ class Solution:
         powers=[]
         power=1
         while divisor<=dividend:
-            doubles.append(divisor)
-            powers.append(power)
+            doubles.append(divisor) #multiples of two of the divisor
+            powers.append(power)   #same as the num of subtractions btw dividend and divisor
             if divisor>-HALF_MIN:
                 break
             divisor+=divisor #double divisor
