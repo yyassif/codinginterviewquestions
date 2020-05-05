@@ -19,9 +19,13 @@ class Solution:
         q=0 #quotient
         doubles=[]
         powers=[]
+        #e.g. dividend 10000, divisor=30
+        #[30, 60, 120, 240, 480, 960, 1920, 3840, 7680]
+        #[1, 2, 4, 8, 16, 32, 64, 128, 256]
+
         power=1
         while divisor<=dividend:
-            doubles.append(divisor) #multiples of two of the divisor
+            doubles.append(divisor) #multiples of two of the divisor, e.g. 3, 6, 12, 24, 
             powers.append(power)   #same as the num of subtractions btw dividend and divisor
             if divisor>-HALF_MIN:
                 break
