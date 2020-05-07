@@ -81,3 +81,15 @@ class Solution:
                 # so current index will also be a leftMostGoodJumpIndex
                 leftMostGoodJumpIndex = i
         return leftMostGoodJumpIndex==0
+
+#my sol based on gredy
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+        n = len(nums)-1
+        furthest = n
+        for i in reversed(range(n)):
+            if i+nums[i] >=furthest:
+                furthest=i
+        return furthest==0
+
+            
