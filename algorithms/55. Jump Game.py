@@ -29,7 +29,7 @@ class Solution:
         return Jump(nums, dp, 0)
 
 # --------------------------------------------------------------
-# Below is the bottom-up approach
+# Below is the bottom-up approach - time limit exceeded
 
 class Solution:
     def canJump(self, nums: List[int]) -> bool:
@@ -47,6 +47,27 @@ class Solution:
         # print(dp)
         return dp[0]
 
+    
+#my sol based on leetcode sol bottom up without recursion -time limit exceeded
+
+class Solution:
+    def canJump(self, nums: List[int]) -> bool:
+        GOOD = 1
+        UNKNOWN = 3
+        n = len(nums)
+        if n==0:
+            return False
+        memo = [UNKNOWN for _ in range(n)]
+        memo[n-1]= GOOD
+        for i in reversed(range(n-1)):
+            furthest = min(i+nums[i], n-1)
+            for j in range(i+1, furthest+1):
+                if memo[j]==GOOD:
+                    memo[i] = GOOD 
+                    break
+                    
+        return memo[0]==GOOD
+    
 # ----------------------------------------------------------------
 # Below is the greedy approach
 
