@@ -1,3 +1,40 @@
+#cleaner sol https://leetcode.com/problems/string-to-integer-atoi/discuss/519546/Python-or-Very-Simple-and-StraightForward
+class Solution:
+    def myAtoi(self, str: str) -> int:
+        i = 0
+        sign = 1
+        num = 0
+
+        while i < len(str) and str[i] == ' ':
+            i += 1
+
+        # step 2: +/- sign
+        if i < len(str):
+            if str[i] == '+':
+                i += 1
+            elif str[i] == '-':
+                sign = -1
+                i += 1
+
+        # step 3: integral
+        while i < len(str):
+            if str[i].isdigit():
+                num *= 10
+                num += int(str[i])
+                i += 1
+            else:
+                break
+
+        # step 4: check larger than max
+        if sign == 1 and num > 2 ** 31 - 1:
+            return 2 ** 31 - 1
+        elif sign == -1 and num > 2 ** 31:
+            return -2 ** 31
+        else:
+            return sign * num
+        
+##############################################################
+#my sol
 #for loop and many if stmts 
 class Solution:
     def myAtoi(self, str: str) -> int:
