@@ -3,7 +3,7 @@ Approach 2: Dynamic Programming Top-down run- bottom up/top down O(n^2)
 Approach 2: greedy - runtime O(n)
 
 https://leetcode.com/problems/jump-game/discuss/606056/Py3-Sol%3A-Greedy-Bottom-Up-Top-down-Easy-to-Understand
-# Below is the top-down approach
+# Below is the top-down approach  time limit exceeded 74/75 passed
 
 class Solution:
     def canJump(self, nums: List[int]) -> bool:
@@ -27,7 +27,7 @@ class Solution:
         return Jump(nums, dp, 0)
 
 # --------------------------------------------------------------
-# Below is the bottom-up approach - time limit exceeded
+# Below is the bottom-up approach - time limit exceeded 74/75 passed
 
 class Solution:
     def canJump(self, nums: List[int]) -> bool:
