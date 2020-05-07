@@ -59,8 +59,8 @@ class Solution:
             return False
         memo = [UNKNOWN for _ in range(n)]
         memo[n-1]= GOOD
-        for i in reversed(range(n-1)):
-            furthest = min(i+nums[i], n-1)
+        for i in reversed(range(n-1)):  #idx 0 to n-2
+            furthest = min(i+nums[i], n-1) #left most index where it's reacheable
             for j in range(i+1, furthest+1):
                 if memo[j]==GOOD:
                     memo[i] = GOOD 
