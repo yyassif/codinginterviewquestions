@@ -9,16 +9,16 @@ def find_substring(s, k):
     for i in range(len(s)):
         if s[i] != removed:
             cnt = 0
-        record[s[i]] = record.get(s[i], 0) + 1
-        if len(record) == k:
+        record[s[i]] = record.get(s[i], 0) + 1 # if s[i] not in record, set it to 1
+        if len(record) == k:   #k distinct letters
             while len(record) == k:
-                record[s[idx]] -= 1
-                if record[s[idx]] == 0:
+                record[s[idx]] -= 1    #idx: idx of the first letter of the substring
+                if record[s[idx]] == 0: #remove the first letter of the substring
                     removed = s[idx]
                     del record[s[idx]]
-                idx += 1
+                idx += 1                #shift by one move to the next k letter. 
                 cnt += 1
-            res += cnt
+            res += cnt    # cnt is 1, 2,3,1 =>total=7
     return res
 
 
