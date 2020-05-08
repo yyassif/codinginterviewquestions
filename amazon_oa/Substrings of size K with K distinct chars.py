@@ -1,4 +1,6 @@
 #Amazon OA question : https://leetcode.com/discuss/interview-question/370112
+#problem : Given a string s and an int k, return an int representing the number of substrings (not unique) of s with exactly k distinct characters. If the given string doesn't have k distinct characters, return 0.
+# https://leetcode.com/problems/subarrays-with-k-different-integers
 #Python solution based on an easier problem LeetCode 1358
 def find_substring(s, k):
     record = {}
