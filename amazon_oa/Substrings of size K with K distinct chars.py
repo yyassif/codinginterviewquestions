@@ -21,7 +21,16 @@ def substringk(s, k):
     return list(res)
 ret = substringk(s,k)
 print(ret)
+######################examples
+Example 1:
 
+Input: s = "pqpqs", k = 2
+Output: 7
+Explanation: ["pq", "pqp", "pqpq", "qp", "qpq", "pq", "qs"]
+Example 2:
+
+Input: s = "aabab", k = 3
+Output: 0
 
 #brute force
 s = "abcabc"
