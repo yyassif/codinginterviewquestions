@@ -15,6 +15,24 @@ class Solution(object):
 
         return dp[0][0]
 
+#approach 2 top down dynamic programming
+class Solution:
+    def isMatch(self, text: str, pattern: str) -> bool:
+        memo = {}
+        def dp(i,j):
+            if (i, j) not in memo:   #i for text, j for pattern
+                if j==len(pattern):
+                    ans = i== len(text) #does the end of pattern/text reach at the same time?
+                else:
+                    first = i<len(text) and pattern[j] in {text[i], '.'}
+                    if j+1 < len(pattern) and pattern[j+1] == '*': #e.g. aaabb and a*bb
+                        ans = dp(i,j+2) or first and dp(i+1,j) #check current j pattern against next text[i+1] e.g. a* against aaabb OR 
+                    else:
+                        ans = first and dp(i+1, j+1) #match next letters
+                memo[i,j] = ans
+            return memo[i,j]
+        return dp(0,0)
+            
 # Approach 1: Recursion  runtime O( (T+P)*2^(T+P/2) ) , space O(T^2+P^2)
 #https://leetcode.com/articles/regular-expression-matching/
 class Solution:
