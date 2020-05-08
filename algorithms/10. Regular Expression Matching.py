@@ -26,7 +26,9 @@ class Solution:
                 else:
                     first = i<len(text) and pattern[j] in {text[i], '.'}
                     if j+1 < len(pattern) and pattern[j+1] == '*': #e.g. aaabb and a*bb
-                        ans = dp(i,j+2) or first and dp(i+1,j) #check current j pattern against next text[i+1] e.g. a* against aaabb  
+                        #a) check whether 0 of pattern[j] matches against text[i]
+                        #OR b) check current j pattern against next text[i+1] e.g. a* against aaabb  
+                        ans = dp(i,j+2) or first and dp(i+1,j) 
                     else:
                         ans = first and dp(i+1, j+1) #match next letters
                 memo[i,j] = ans
