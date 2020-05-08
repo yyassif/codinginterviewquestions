@@ -1,5 +1,5 @@
 # Approach 1: Recursion  runtime O( (T+P)*2^(T+P/2) ) , space O(T^2+P^2)
-
+#https://leetcode.com/articles/regular-expression-matching/
 class Solution:
     def isMatch(self, text: str, pattern: str) -> bool:
         if not pattern:
