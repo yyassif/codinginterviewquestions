@@ -1,5 +1,46 @@
 #Amazon OA question : https://leetcode.com/discuss/interview-question/370112
+
+def find_substring(s, k):
+    record = {}
+    res = idx = cnt = 0
+    removed = '#'
+    for i in range(len(s)):
+        if s[i] != removed:
+            cnt = 0
+        record[s[i]] = record.get(s[i], 0) + 1
+        if len(record) == k:
+            while len(record) == k:
+                record[s[idx]] -= 1
+                if record[s[idx]] == 0:
+                    removed = s[idx]
+                    del record[s[idx]]
+                idx += 1
+                cnt += 1
+            res += cnt
+    return res
+
 #efficient sol
+#Python solution based on an easier problem LeetCode 1358
+def find_substring(s, k):
+    record = {}
+    res = idx = cnt = 0
+    removed = '#'
+    for i in range(len(s)):
+        if s[i] != removed:
+            cnt = 0
+        record[s[i]] = record.get(s[i], 0) + 1
+        if len(record) == k:
+            while len(record) == k:
+                record[s[idx]] -= 1
+                if record[s[idx]] == 0:
+                    removed = s[idx]
+                    del record[s[idx]]
+                idx += 1
+                cnt += 1
+            res += cnt
+    return res
+
+
 #solution same as 3. Longest Substring Without Repeating Characters except it checks for lengths=k and adds it to a set
 s = "abcabc"
 k = 3
