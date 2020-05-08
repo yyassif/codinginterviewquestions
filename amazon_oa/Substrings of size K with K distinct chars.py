@@ -19,60 +19,17 @@ def find_substring(s, k):
             res += cnt
     return res
 
-#efficient sol
 
-def find_substring(s, k):
-    record = {}
-    res = idx = cnt = 0
-    removed = '#'
-    for i in range(len(s)):
-        if s[i] != removed:
-            cnt = 0
-        record[s[i]] = record.get(s[i], 0) + 1
-        if len(record) == k:
-            while len(record) == k:
-                record[s[idx]] -= 1
-                if record[s[idx]] == 0:
-                    removed = s[idx]
-                    del record[s[idx]]
-                idx += 1
-                cnt += 1
-            res += cnt
-    return res
+def test_driver(s,k, result):
+    ret = find_substring(s, k)
+    print(s,k,result)
+    print("resut :", ret)
+    print("expected: ",result, end="\n\n")
+    assert ret==result
+test_driver("pqpqs", 2, 7)
+test_driver("aabab", 3,0)
 
-
-#solution same as 3. Longest Substring Without Repeating Characters except it checks for lengths=k and adds it to a set
-s = "abcabc"
-k = 3
-def substringk(s, k):
-    n = len(s)
-    if n<k or k == 0:
-        return []
-    
-    map, res = {}, set()
-    i = 0
-    for j in range(n):
-        c= s[j]
-        if c in map:
-            i = map[c]+1
-        map[c] = j
-        if j-i+1==k:   #
-            res.add(s[i:j+1])
-            i += 1
-    return list(res)
-ret = substringk(s,k)
-print(ret)
-######################examples
-Example 1:
-
-Input: s = "pqpqs", k = 2
-Output: 7
-Explanation: ["pq", "pqp", "pqpq", "qp", "qpq", "pq", "qs"]
-Example 2:
-
-Input: s = "aabab", k = 3
-Output: 0
-
+###################################################################
 #brute force
 s = "abcabc"
 k = 3
