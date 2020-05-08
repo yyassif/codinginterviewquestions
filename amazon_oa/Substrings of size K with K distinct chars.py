@@ -1,5 +1,5 @@
 #Amazon OA question : https://leetcode.com/discuss/interview-question/370112
-
+#Python solution based on an easier problem LeetCode 1358
 def find_substring(s, k):
     record = {}
     res = idx = cnt = 0
@@ -20,7 +20,7 @@ def find_substring(s, k):
     return res
 
 #efficient sol
-#Python solution based on an easier problem LeetCode 1358
+
 def find_substring(s, k):
     record = {}
     res = idx = cnt = 0
