@@ -9,9 +9,11 @@ class Solution(object):
             for j in range(len(pattern) - 1, -1, -1):
                 first_match = i < len(text) and pattern[j] in {text[i], '.'}
                 if j+1 < len(pattern) and pattern[j+1] == '*':
+                    # a) zero first pattern letter match, then skip 2 for pattern e.g. a*bbb against cccc
+                    # OR b) first letters match, then check next letter text[i+1] against current pattern[j]
                     dp[i][j] = dp[i][j+2] or (first_match and dp[i+1][j])
                 else:
-                    dp[i][j] = first_match and dp[i+1][j+1]
+                    dp[i][j] = first_match and dp[i+1][j+1] #check next letters from text and pattern
 
         return dp[0][0]
 
