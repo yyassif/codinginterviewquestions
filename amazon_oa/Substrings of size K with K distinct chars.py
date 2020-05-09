@@ -4,10 +4,11 @@
 #Python solution based on an easier problem LeetCode 1358
 def find_substring(s, k):
     record = {}
-    res = idx = cnt = 0
+    total=0
+    idx = cnt = 0
     removed = '#'
     for i in range(len(s)):
-        if s[i] != removed:
+        if s[i] != removed:  #check if a substring starts with a new letter
             cnt = 0
         record[s[i]] = record.get(s[i], 0) + 1 # if s[i] not in record, set it to 1
         if len(record) == k:   #k distinct letters
@@ -18,8 +19,8 @@ def find_substring(s, k):
                     del record[s[idx]]
                 idx += 1                #shift by one move to the next k letter. 
                 cnt += 1
-            res += cnt    # cnt is 1, 2,3,1 =>total=7
-    return res
+            total += cnt    # cnt is 1, 2,3,1 =>total=7
+    return total
 
 
 def test_driver(s,k, result):
