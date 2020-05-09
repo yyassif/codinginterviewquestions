@@ -1,3 +1,4 @@
+#two pointer sliding window
 class Solution:
     def numberOfSubstrings(self, s: str) -> int:
         total = 0
@@ -5,7 +6,7 @@ class Solution:
         if len(counts)<3:
             return 0
         i, j = 0, 0
-        while j != len(s) and i != len(s)-2:
+        while j<len(s) and i<len(s)-2:
             counts[s[j]] += 1
             while all(counts.values()): #contains all three chars
                 total += len(s) - j
