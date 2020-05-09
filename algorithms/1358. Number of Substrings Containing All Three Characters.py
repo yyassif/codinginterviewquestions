@@ -1,4 +1,8 @@
 #two pointer sliding window
+# Input: s = "abcabc"
+# Output: 10
+# Explanation: The substrings containing at least one occurrence of the characters a, b and c are 
+#     "abc", "abca", "abcab", "abcabc", "bca", "bcab", "bcabc", "cab", "cabc" and "abc" (again). 
 class Solution:
     def numberOfSubstrings(self, s: str) -> int:
         total = 0
