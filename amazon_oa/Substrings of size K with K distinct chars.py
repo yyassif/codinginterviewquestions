@@ -28,6 +28,6 @@ def test_driver(s,k, result):
     print("resut :", ret)
     print("expected: ",result, end="\n\n")
     assert ret==result
-test_driver("pqpqs", 2, 7)
+test_driver("pqpqs", 2, 7) #Explanation: ["pq", "pqp", "pqpq", "qp", "qpq", "pq", "qs"]
 test_driver("aabab", 3,0)
 
