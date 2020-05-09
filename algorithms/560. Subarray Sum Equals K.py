@@ -12,7 +12,9 @@ class Solution:
         for i in range(n):
             total+=nums[i]
             if total-k in dic:
-                cnt+= dic[total-k]
+                # we also determine the number of times the sum sum-ksum−k has occured already, 
+                #since it will determine the number of times a subarray with sum kk has occured upto the current
+                cnt+= dic[total-k] 
             dic[total] =dic.get(total, 0)+1
         print(dic)
         return cnt
