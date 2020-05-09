@@ -16,5 +16,5 @@ class Solution:
                 total += len(s) - j
                 counts[s[i]] -= 1
                 i += 1
-            j += 1
+            j += 1 #moves to idx j so that at least one of each letter is in a substring
         return total
