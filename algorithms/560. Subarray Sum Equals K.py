@@ -1,5 +1,7 @@
 
 # hashmap method - O(n) runtime/space
+# make use of the fact : if sum(nums[i:j])==0, sums do not change between i,j. 
+# use hashmap to store values and check if total-k is in a hashmap
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
         n=len(nums)
