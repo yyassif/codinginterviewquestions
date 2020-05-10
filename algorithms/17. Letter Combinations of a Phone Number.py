@@ -1,3 +1,4 @@
+#backtracking space/runtime O(3^N * 4^M) where N is the number of 3 letter numbers and M for 4 letter numbers
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
         if digits=="":
