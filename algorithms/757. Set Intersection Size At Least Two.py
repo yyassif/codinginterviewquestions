@@ -1,4 +1,7 @@
 #greedy sol https://leetcode.com/problems/set-intersection-size-at-least-two/discuss/439986/Python-keep-track-of-the-right-most-2-points
+#Sort intervals by end. The right-most 2 points are the one we are interested in.
+#When a new interval comes, reuse the current right-most 2 points as much as possible.
+#If can't reuse, then introduce new points to the right-most side of new interval.
  def intersectionSizeTwo(self, intervals: List[List[int]]) -> int:
         intervals.sort(key=lambda x:x[1])
         res=0
