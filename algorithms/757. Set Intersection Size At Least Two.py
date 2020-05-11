@@ -9,14 +9,17 @@ class Solution(object):
         s,e=0,0 #start, end
         isNew=True
         for start, end in intervals:
+            # at the start OR temp start,end = 5,7, temp s,e: 1,3 => temp s,e=6,7
             if isNew==True or start>e:
                 res+=2
                 s=end-1
                 e=end
                 isNew=False
+            # temp s,e = 1,3, interval: 2,4 => temp s,e=3,4
             elif start>s:
                 res+=1
-                s,e = e,end
+                s= e
+                e= end
         return res
     
 #https://leetcode.com/problems/set-intersection-size-at-least-two/discuss/279406/Python-O(nlogn)-always-peek-the-top-two-elements-of-maxheap
