@@ -2,17 +2,21 @@
 #Sort intervals by end. The right-most 2 points are the one we are interested in.
 #When a new interval comes, reuse the current right-most 2 points as much as possible.
 #If can't reuse, then introduce new points to the right-most side of new interval.
- def intersectionSizeTwo(self, intervals: List[List[int]]) -> int:
+class Solution(object):
+    def intersectionSizeTwo(self, intervals: List[List[int]]) -> int:
         intervals.sort(key=lambda x:x[1])
-        res=0
-        cur=[]
-        for start,end in intervals:
-            if not cur or start>cur[1]:
+        res =0
+        s,e=0,0 #start, end
+        isNew=True
+        for start, end in intervals:
+            if isNew==True or start>e:
                 res+=2
-                cur=[end-1,end]
-            elif start>cur[0]:
+                s=end-1
+                e=end
+                isNew=False
+            elif start>s:
                 res+=1
-                cur=[cur[1],end]
+                s,e = e,end
         return res
     
 #https://leetcode.com/problems/set-intersection-size-at-least-two/discuss/279406/Python-O(nlogn)-always-peek-the-top-two-elements-of-maxheap
