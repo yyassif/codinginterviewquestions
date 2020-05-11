@@ -13,9 +13,9 @@ class Solution:
                     dp[j] = grid[i][j]+dp[j+1]
                 elif j==m-1 and i!=n-1: #last col of grid
                     dp[j] = grid[i][j]+dp[j]
-                elif j!=m-1 and i!=n-1:
+                elif j!=m-1 and i!=n-1: #i,j is towards center
                     dp[j] = grid[i][j]+min(dp[j],dp[j+1])
-                else:
+                else: #i ==n-1 and j==m-1 "end corner cell"
                     dp[j] = grid[i][j]
         return dp[0]
 
