@@ -23,7 +23,7 @@ class Solution:
         elif amount==0:
             return 0
         self.min_steps=float('inf')
-        dic={}
+        dic={}  #key=remainder(amount-coin), value=min_steps
         mini = float('inf')
         def rec(rem):
             if rem<0:
