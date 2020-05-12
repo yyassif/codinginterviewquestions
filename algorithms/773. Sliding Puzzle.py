@@ -1,3 +1,4 @@
+#space/time complexity O(R*C*(R*C)!) # analysis:https://leetcode.com/articles/sliding-puzzle/
 class Solution:
     def slidingPuzzle(self, board: List[List[int]]) -> int:
         b_str= ''.join([str(c) for c in board[0]+board[1]]) #flatten 2d board in 1d strings
