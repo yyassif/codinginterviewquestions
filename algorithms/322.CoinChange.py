@@ -30,12 +30,13 @@ class Solution:
                 return -1
             if rem==0:
                 return 0
-            if rem in dic and dic[rem]!=0:
-                return dic[rem]
+            if rem in dic and dic[rem]!=0: #if rem=amount-coin value already explored
+                return dic[rem] #min_steps so far
             mini = float('inf')
             for coin in coins:
-                res = rec(rem-coin)
-                if res>=0 and res<mini:
+                res = rec(rem-coin)  #res=min step
+                #update mini=min_step
+                if res>=0 and res<mini:  #recursive call return value is 0 or greater - amount found or being searched
                     mini = res+1
                 
             dic[rem] = mini if mini!=float('inf') else -1
