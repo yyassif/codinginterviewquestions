@@ -5,10 +5,10 @@ def minWindow(s, t):
         return ""
 
     # Dictionary which keeps a count of all the unique characters in t.
-    dict_t = collections.Counter(t)
+    dict_t = collections.Counter(t)  #count frequency of chars of pattern T
 
     # Number of unique characters in t, which need to be present in the desired window.
-    required = len(dict_t)
+    required = len(dict_t)    #count # of unique chars in the pattern T
 
     # left and right pointer
     l, r = 0, 0
