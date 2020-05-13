@@ -43,6 +43,8 @@ def minWindow(s, t):
 
             # The character at the position pointed by the `left` pointer is no longer a part of the window.
             window_counts[character] -= 1
+            # window_counts[c] < dict_t[c] will become eventually true since window_counts[character] -= 1
+            # but there can also be multiple of the same chars as the left most char
             if character in dict_t and window_counts[character] < dict_t[character]:
                 formed -= 1 #due to contraction of the range, formed=frequency chars also decrease
 
