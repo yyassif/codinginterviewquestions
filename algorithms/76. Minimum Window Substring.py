@@ -1,4 +1,5 @@
 #optimized sliding window sol 2
+#space/run time O(S+T)
 import collections
 class Ans:
     def __init__(self):
