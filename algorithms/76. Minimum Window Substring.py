@@ -1,3 +1,45 @@
+#optimized sliding window sol 2
+import collections
+class Ans:
+    def __init__(self):
+        self.mini = float('inf')
+        self.left=0
+        self.right=0
+class Solution:
+    def minWindow(self, s: str, t: str) -> str:
+        if not t or not s:
+            return ""
+        dic_t = collections.Counter(t)
+        required = len(dic_t)
+        filtered_s = []
+        for i, char in enumerate(s):
+            if char in dic_t:
+                filtered_s.append((i, char))
+        l, r=0,0
+        formed=0
+        window_counts={}
+        ans = Ans()
+        while r<len(filtered_s):
+            c = filtered_s[r][1]
+            window_counts[c] = window_counts.get(c, 0)+1
+            if window_counts[c]==dic_t[c]:
+                formed+=1
+            while l<=r and formed==required:
+                c = filtered_s[l][1]
+                end = filtered_s[r][0]
+                start = filtered_s[l][0]
+                if end-start+1<ans.mini:
+                    ans.mini = end-start+1
+                    ans.left = start
+                    ans.right = end
+                window_counts[c] -=1
+                if window_counts[c] <dic_t[c]:
+                    formed-=1
+                l+=1
+            r+=1
+        return s[ans.left:ans.right+1] if ans.mini!=float('inf') else ""
+    
+###################################################################################
 #sliding window sol 1
 import collections
 def minWindow(s, t):
