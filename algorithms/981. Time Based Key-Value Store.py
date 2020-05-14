@@ -21,7 +21,10 @@ class TimeMap:
         t,v = self.map[key][idx-1] #idx-1 b/c it's matched idx or before
         return v
 
-# Your TimeMap object will be instantiated and called as such:
-# obj = TimeMap()
-# obj.set(key,value,timestamp)
-# param_2 = obj.get(key,timestamp)
+# i = bisect.bisect(a,b) will set i to the first index where a[i] > b
+# for this case- a is our list of tuples and b is our target tuple
+# to correctly define the target we must provide a tuple following format (number, string).
+# number is timestamp. string we must use a value > any provided string.
+# i.e. 'z' > 'yyyyy', therefore 'z'+1 must be greater than any 'a-z' string.
+# chr( ord('z')+1 ) = chr(123)
+# chr(127) can also be used to include all valid ascii characters(7 bits 0-127)
