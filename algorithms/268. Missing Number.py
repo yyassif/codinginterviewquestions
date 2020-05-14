@@ -18,7 +18,7 @@ class Solution:
         actual_sum = sum(nums)
         return expected_sum - actual_sum
 
-#sol
+#sol similar to hashset.  O(n) for both space and runtime
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
         n = len(nums)
@@ -28,7 +28,15 @@ class Solution:
         for num in arr:
             if num not in nums:
                 return num
-        
+
+#hashset sol  O(n) for both space and runtime
+class Solution:
+    def missingNumber(self, nums):
+        num_set = set(nums)
+        n = len(nums) + 1
+        for number in range(n):
+            if number not in num_set:
+                return number
 
 #missing number
 class Solution:
