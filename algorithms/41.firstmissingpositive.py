@@ -46,6 +46,8 @@ class Solution:
             if nums[i] <= 0 or nums[i] > n:
                 nums[i] = 1
         
+        # multiply by one to record idx of missing numbers, NOT THE NUMBER ITSELF
+        # ****index of missing number DO NOT CORRESPOND with nums[idx] *********
         # Use index as a hash key and number sign as a presence detector.
         # For example, if nums[1] is negative that means that number `1`
         # is present in the array. 
