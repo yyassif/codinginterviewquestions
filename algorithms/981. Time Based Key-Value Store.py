@@ -16,10 +16,10 @@ class TimeMap:
         if self.map.get(key, None) is None:
             return ""
         arr = self.map[key]
-        #bisect returns idx after the value (point to insert)
-        idx = bisect.bisect_left(arr,(timestamp,chr(127)))
-        t,v = self.map[key][idx-1] #idx-1 b/c it's matched idx or before
-        return v
+        #bisect returns idx after the value (point to insert) since chr(127) bigger than all chars
+        i = bisect.bisect(arr,(timestamp,chr(127)))
+        #idx-1 b/c it's matched idx or before
+        return arr[i-1][1] if i else "" #if i returns 0, return ""
 
 # i = bisect.bisect(a,b) will set i to the first index where a[i] > b
 # for this case- a is our list of tuples and b is our target tuple
