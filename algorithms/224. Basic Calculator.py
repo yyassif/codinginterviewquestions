@@ -1,4 +1,6 @@
 #sol 2 without reversing string
+#+, - ) marks the end of operand
+#runtime O(n), space O(n)
 class Solution:
     def calculate(self, s: str) -> int:
 
