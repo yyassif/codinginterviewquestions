@@ -1,3 +1,5 @@
+#Approach 1: Stack and String Reversal
+#space and run -O(n)
 class Solution:
     def calculate(self, s: str) -> int:
         def eval(stack):
