@@ -41,7 +41,7 @@ class Solution:
                 stack.append(sign)
 
                 # Reset operand and result, as if new evaluation begins for the new sub-expression
-                sign = 1
+                sign = 1   #also sign, res is appended to stack
                 res = 0
 
             elif ch == ')':
