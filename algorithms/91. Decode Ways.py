@@ -1,6 +1,6 @@
 #iterative sol run/space O(n)
 #e.g. dp array for "326"
-(3,2,6) is one case. (3,26) is 2nd case
+(3,2,6) is one case. (3,26) is 2nd case. that's why it's like carrying off the baton
 for loop
 [1, 1, 1, 0]
 [1, 1, 1, 0]
