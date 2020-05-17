@@ -34,7 +34,7 @@ class Solution:
             if node is None:
                 continue
             # overwrite rightmost value at current depth. the correct value
-            # will never be overwritten, as it is always visited last.
+            # will never be overwritten, as it is always visited last.<------------- ******************
             dic[level] = node.val     <---different from DFS : overwrite dictionary 
                 
             max_level = max(max_level, level)
