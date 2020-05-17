@@ -1,6 +1,10 @@
 #iterative sol run/space O(n)
 #e.g. dp array for "326"
+for loop
 [1, 1, 1, 0]
+[1, 1, 1, 0]
+for loop
+[1, 1, 1, 1]
 [1, 1, 1, 2]
 class Solution:
     def numDecodings(self, s: str) -> int:
@@ -15,7 +19,8 @@ class Solution:
                 dp[i] +=dp[i-1]
             two_digit = int(s[i-2:i])
             if two_digit >=10 and two_digit <=26:
-                dp[i] +=dp[i-2]      #check two valid digits, store value at dp[i] from dp[i-2]
+                dp[i] +=dp[i-2]      #check two valid digits, store value at dp[i] from dp[i-2] 
+                #b/c you count once for 1 digit and another for two digits. 
         return dp[n]
 #recursive sol run/space O(n)
 # '0' doesn't have a single digit decode.
