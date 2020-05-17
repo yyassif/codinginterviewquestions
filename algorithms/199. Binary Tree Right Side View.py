@@ -33,7 +33,10 @@ class Solution:
             node, level = stack.pop(0)  <---different from DFS
             if node is None:
                 continue
+            # overwrite rightmost value at current depth. the correct value
+            # will never be overwritten, as it is always visited last.
             dic[level] = node.val     <---different from DFS : overwrite dictionary 
+                
             max_level = max(max_level, level)
             stack.append((node.left, level+1))
             stack.append((node.right, level+1))
