@@ -1,3 +1,21 @@
+Suppose we're working with 8 bit quantities (for simplicity's sake) and suppose we want to find how -28 would be expressed in two's complement notation. First we write out 28 in binary form.
+
+00011100
+Then we invert the digits. 0 becomes 1, 1 becomes 0.
+
+11100011
+Then we add 1.
+
+11100100
+That is how one would write -28 in 8 bit binary.
+
+Conversion from Two's Complement
+Use the number 0xFFFFFFFF as an example. In binary, that is:
+
+1111 1111 1111 1111 1111 1111 1111 1111
+#reference
+https://www.cs.cornell.edu/~tomf/notes/cps104/twoscomp.html
+	
 # x & 0xFFFFFFFF == x
 # will return True if x doesn't oveflow and x is larger than 0.
 #         1.Why carry is a&b:
