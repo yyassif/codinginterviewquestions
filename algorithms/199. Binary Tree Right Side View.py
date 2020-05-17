@@ -1,4 +1,5 @@
 #DFS O(N) for space/run
+# ***KEEP TRACK OF MAX_DEPTH/LEVEL to track tree nodes on the LEFT SIDE. see diagram at https://leetcode.com/articles/binary-tree-right-side-view/
 class Solution(object):
     def rightSideView(self, root):
         rightmost_value_at_depth = dict() # depth -> node.val
