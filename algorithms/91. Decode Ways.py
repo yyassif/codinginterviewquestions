@@ -1,4 +1,4 @@
-#run/space O(1)
+#recursive sol run/space O(1)
 class Solution:
     def numDecodings(self, s: str) -> int:
         if not s:
