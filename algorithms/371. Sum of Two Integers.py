@@ -1,3 +1,5 @@
+# x & 0xFFFFFFFF == x
+# will return True if x doesn't oveflow and x is larger than 0.
 #         1.Why carry is a&b:
 #         If a and b are both 1 at the same digit, it creates one carry.
 #         Because you can only use 0 and 1 in binary, if you add 1+1 together, it will roll that over to the next digit, and the value will be 0 at this digit.
