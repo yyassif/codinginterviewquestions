@@ -1,4 +1,5 @@
 #recursive sol run/space O(1)
+# '0' doesn't have a single digit decode.
 class Solution:
     def numDecodings(self, s: str) -> int:
         if not s:
@@ -8,7 +9,7 @@ class Solution:
         def rec(i):
             if i==n:
                 return 1
-            if s[i]=='0':
+            if s[i]=='0':         # '0' doesn't have a single digit decode.
                 return 0
             if i==n-1:
                 return 1
