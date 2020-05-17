@@ -19,3 +19,22 @@ class Solution(object):
                 stack.append((node.right, depth+1))
 
         return [rightmost_value_at_depth[depth] for depth in range(max_depth+1)]
+
+#BFS 
+class Solution:
+    def rightSideView(self, root: TreeNode) -> List[int]:
+        if root is None:
+            return []
+        dic = {}
+        max_level = -1
+        stack = [(root, 0)]
+        while stack:
+            node, level = stack.pop(0)  <---different from DFS
+            if node is None:
+                continue
+            dic[level] = node.val     <---different from DFS : overwrite dictionary 
+            max_level = max(max_level, level)
+            stack.append((node.left, level+1))
+            stack.append((node.right, level+1))
+        return [dic[x] for x in range(max_level+1)]
+    
