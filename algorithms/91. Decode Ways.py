@@ -1,4 +1,7 @@
 #iterative sol run/space O(n)
+#e.g. dp array for "326"
+[1, 1, 1, 0]
+[1, 1, 1, 2]
 class Solution:
     def numDecodings(self, s: str) -> int:
         if not s:
