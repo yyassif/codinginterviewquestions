@@ -30,7 +30,7 @@ https://www.cs.cornell.edu/~tomf/notes/cps104/twoscomp.html
 
 def getSum(self, a: int, b: int) -> int:
 	carry = 0
-    mask = 0xffffffff
+    mask = 0xffffffff   #all ones ==MAX_INT =2**32-1
     while b & mask != 0:
         carry = (a & b) << 1
         a = a ^ b
@@ -39,7 +39,7 @@ def getSum(self, a: int, b: int) -> int:
     # for overflow condition like
     # -1
     #  1
-    return a&mask if b > mask else a
+    return a&mask if b > mask else a 
 	
 	
 #more explanation
