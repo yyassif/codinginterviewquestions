@@ -7,12 +7,12 @@ class Solution:
         dp = [0 for _ in range(n+1)]
         dp[0] = 1
         dp[1] = 0 if s[0] == '0' else 1
-        for i in range(2, n+1):
+        for i in range(2, n+1): #store the results from 1 or 2 digits before at i
             if s[i-1]!='0':
                 dp[i] +=dp[i-1]
             two_digit = int(s[i-2:i])
             if two_digit >=10 and two_digit <=26:
-                dp[i] +=dp[i-2]
+                dp[i] +=dp[i-2]      #check two valid digits, store value at dp[i] from dp[i-2]
         return dp[n]
 #recursive sol run/space O(n)
 # '0' doesn't have a single digit decode.
