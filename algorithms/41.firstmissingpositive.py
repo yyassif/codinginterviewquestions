@@ -2,7 +2,7 @@
 #reference https://leetcode.com/articles/first-missing-positive/
 #cycle sort
 Another O(n) solution use cycle sort:
-#****If number is not missing, nums array should hav numbers between 1~N
+#****If number is not missing, nums array should hav numbers between 1~N. if that's the case, return the next number N+1
 def firstMissingPositive(self, nums: List[int]) -> int:
     i = 0
     n = len(nums)
