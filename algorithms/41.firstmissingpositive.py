@@ -65,7 +65,7 @@ class Solution:
         # is equal to first missing positive.
         for i in range(1, n):
             if nums[i] > 0:
-                return i
+                return i   #missing # is encoded as positve INDEX val==missing num
         
         if nums[0] > 0:
             return n
