@@ -3,20 +3,21 @@
 import heapq
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
-        q = [(-nums[i],i) for i in range(k-1)]
+        q = [(-nums[i], i) for i in range(k-1)]
         heapq.heapify(q)
-        maxs = []
+        ret = []
+        
         for i,num in enumerate(nums[k-1:],k-1):
-            heapq.heappush(q,(-num,i))
-            maxs.append(self.get_max_gt_start(q,i-k+1))
-        return maxs
+            heapq.heappush(q, (-num, i))
+            while True:
+                max_val , max_i = q[0]
+                if max_i>= i-k+1:
+                    break
+                heapq.heappop(q)
+            ret.append(-max_val)
+        return ret
     
-    def get_max_gt_start(self, q, start):
-        while True:
-            val, indx = q[0]
-            if indx >= start:
-                return -val
-            heapq.heappop(q)
+        
 Adding the deque version as well.
 
 from collections import deque
