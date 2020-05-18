@@ -53,13 +53,13 @@ class Solution:
         # is present in the array. 
         # If nums[2] is positive - number 2 is missing.
         for i in range(n): 
-            a = abs(nums[i])
+            temp = abs(nums[i])
             # If you meet number a in the array - change the sign of a-th element.
             # Be careful with duplicates : do it only once.
-            if a == n:     #encode the number n at index 0 since there are no zeroes. 
+            if temp == n:     #encode the number n at index 0 since there are no zeroes. 
                 nums[0] = - abs(nums[0])
             else:      #if number is not n then encode the number with a negative sign at index==number in nums array
-                nums[a] = - abs(nums[a])
+                nums[temp] = - abs(nums[temp])
             
         # Now the index of the first positive number 
         # is equal to first missing positive.
@@ -67,7 +67,7 @@ class Solution:
             if nums[i] > 0:
                 return i   #missing # is encoded as positve INDEX val==missing num
         
-        if nums[0] > 0:
+        if nums[0] > 0: # value N is missing in nums since nums[0] is positive
             return n
             
         return n + 1     #no numbers are missing. return the next num in sequence.
